@@ -15,9 +15,7 @@ class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <div className="topnav">
-                    <Topnav />
-                </div>
+                <Topnav />
                 <div className="banner">
                     <div className="img"></div>
                     <div className="title"></div>
@@ -31,7 +29,7 @@ class Container extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1>Hello, my name is Kiko, I'm a Node.JS and Web Developer.</h1>
+                <h2>Hello, my name is Kiko, I'm a Node.JS and Web Developer.</h2>
             </div>
         )
     }
@@ -40,7 +38,7 @@ class Container extends React.Component {
 class Page extends React.Component {
     render() {
         return (
-            <div className=".root">
+            <div className="root">
                 <Header />
                 <Container />
             </div>

@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Open Sans";
+    min-height: 100vh;
+}
+
+.topnav {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background: #222;
+    color: white;
+    box-shadow: 0 0px 10px black;
+}
+
+.header {
+    height: 60vh;
+}
+
+.container {
+    padding: 0 20vw;
+}
+
+.topnav li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.banner.img {
+    height: 100%;
+}
+
+.banner {
+    height: 100%;
+}
+
+.img {
+    height: 100%;
+}

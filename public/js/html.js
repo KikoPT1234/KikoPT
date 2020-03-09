@@ -57,11 +57,7 @@ var Header = function (_React$Component2) {
             return React.createElement(
                 "div",
                 { className: "header" },
-                React.createElement(
-                    "div",
-                    { className: "topnav" },
-                    React.createElement(Topnav, null)
-                ),
+                React.createElement(Topnav, null),
                 React.createElement(
                     "div",
                     { className: "banner" },
@@ -91,7 +87,7 @@ var Container = function (_React$Component3) {
                 "div",
                 { className: "container" },
                 React.createElement(
-                    "h1",
+                    "h2",
                     null,
                     "Hello, my name is Kiko, I'm a Node.JS and Web Developer."
                 )
@@ -116,7 +112,7 @@ var Page = function (_React$Component4) {
         value: function render() {
             return React.createElement(
                 "div",
-                { className: ".root" },
+                { className: "root" },
                 React.createElement(Header, null),
                 React.createElement(Container, null)
             );
