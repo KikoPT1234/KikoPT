@@ -11,7 +11,7 @@ class Topnav extends React.Component {
     }
 }
 
-module.exports = class Header extends React.Component {
+class Header extends React.Component {
     render() {
         return (
             <div className="header">

@@ -6,9 +6,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Container = require("../components/container");
-var Header = require("../components/header");
-
 var Page = function (_React$Component) {
     _inherits(Page, _React$Component);
 
@@ -24,16 +21,11 @@ var Page = function (_React$Component) {
             return React.createElement(
                 "div",
                 { className: "root" },
-                React.createElement(Header, null),
-                React.createElement(Container, null)
+                React.createElement(Header, { selected: this.props.selected }),
+                React.createElement(Container, { value: this.props.value })
             );
         }
     }]);
 
     return Page;
 }(React.Component);
-
-// =========================================
-
-
-ReactDOM.render(React.createElement(Page, null), document.querySelector("body"));

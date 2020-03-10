@@ -1,16 +1,15 @@
-const Container = require("../components/container")
-const Header = require("../components/header")
-
-class Page extends React.Component {
+class Home extends React.Component {
     render() {
         return (
-            <div className="root">
-                <Header />
-                <Container />
-            </div>
+            <h2>Hello, my name is Kiko. I'm a student who does Node.JS and Web Developing.</h2>
         )
     }
 }
 
 // =========================================
-ReactDOM.render(<Page />, document.querySelector("body"))
+ReactDOM.render(
+    <Page 
+        value={<Home/>} 
+        selected="Home"
+    />
+, document.querySelector("body"))

@@ -6,123 +6,33 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Topnav = function (_React$Component) {
-    _inherits(Topnav, _React$Component);
+var Home = function (_React$Component) {
+    _inherits(Home, _React$Component);
 
-    function Topnav() {
-        _classCallCheck(this, Topnav);
+    function Home() {
+        _classCallCheck(this, Home);
 
-        return _possibleConstructorReturn(this, (Topnav.__proto__ || Object.getPrototypeOf(Topnav)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
     }
 
-    _createClass(Topnav, [{
+    _createClass(Home, [{
         key: "render",
         value: function render() {
             return React.createElement(
-                "div",
-                { className: "topnav" },
-                React.createElement(
-                    "ul",
-                    null,
-                    React.createElement(
-                        "li",
-                        null,
-                        "Minehut"
-                    ),
-                    React.createElement(
-                        "li",
-                        null,
-                        "Other Stuff"
-                    )
-                )
+                "h2",
+                null,
+                "Hello, my name is Kiko. I'm a student who does Node.JS and Web Developing."
             );
         }
     }]);
 
-    return Topnav;
-}(React.Component);
-
-var Header = function (_React$Component2) {
-    _inherits(Header, _React$Component2);
-
-    function Header() {
-        _classCallCheck(this, Header);
-
-        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-    }
-
-    _createClass(Header, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "header" },
-                React.createElement(Topnav, null),
-                React.createElement(
-                    "div",
-                    { className: "banner" },
-                    React.createElement("div", { className: "img" }),
-                    React.createElement("div", { className: "title" })
-                )
-            );
-        }
-    }]);
-
-    return Header;
-}(React.Component);
-
-var Container = function (_React$Component3) {
-    _inherits(Container, _React$Component3);
-
-    function Container() {
-        _classCallCheck(this, Container);
-
-        return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
-    }
-
-    _createClass(Container, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "container" },
-                React.createElement(
-                    "h2",
-                    null,
-                    "Hello, my name is Kiko, I'm a student who does Node.JS and Web Developing."
-                )
-            );
-        }
-    }]);
-
-    return Container;
-}(React.Component);
-
-var Page = function (_React$Component4) {
-    _inherits(Page, _React$Component4);
-
-    function Page() {
-        _classCallCheck(this, Page);
-
-        return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
-    }
-
-    _createClass(Page, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "root" },
-                React.createElement(Header, null),
-                React.createElement(Container, null)
-            );
-        }
-    }]);
-
-    return Page;
+    return Home;
 }(React.Component);
 
 // =========================================
 
 
-ReactDOM.render(React.createElement(Page, null), document.querySelector("body"));
+ReactDOM.render(React.createElement(Page, {
+    value: React.createElement(Home, null),
+    selected: "Home"
+}), document.querySelector("body"));

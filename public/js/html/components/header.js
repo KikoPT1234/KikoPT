@@ -42,7 +42,7 @@ var Topnav = function (_React$Component) {
     return Topnav;
 }(React.Component);
 
-module.exports = function (_React$Component2) {
+var Header = function (_React$Component2) {
     _inherits(Header, _React$Component2);
 
     function Header() {
