@@ -89,7 +89,7 @@ var Container = function (_React$Component3) {
                 React.createElement(
                     "h2",
                     null,
-                    "Hello, my name is Kiko, I'm a Node.JS and Web Developer."
+                    "Hello, my name is Kiko, I'm a student who does Node.JS and Web Developing."
                 )
             );
         }

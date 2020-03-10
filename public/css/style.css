@@ -43,4 +43,6 @@ body {
 
 .img {
     height: 100%;
+    background: url(../images/oscar.JPG) no-repeat center;
+    background-size: cover;
 }
