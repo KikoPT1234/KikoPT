@@ -3,6 +3,7 @@ const app = express()
 app.listen(process.env.PORT || 80)
 
 app.use(function (request, response, next) {
+    console.log(request.headers.host, request.url)
     if (!request.secure) {
         response.redirect("https://" + request.headers.host + request.url);
     }
