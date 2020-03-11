@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 
-app.use(function (request, response, next) {
+app.use((request, response, next) => {
     console.log(request.headers.host, request.url)
     if (!request.secure) {
         response.redirect("https://" + request.headers.host + request.url);
