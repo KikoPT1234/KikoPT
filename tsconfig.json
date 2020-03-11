@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "outDir": "./public/js/functional/",
+        "noImplicitAny": true,
+        "watch": true,
+        "target": "ESNext"
+    }
+}
