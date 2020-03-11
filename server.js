@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-app.listen(process.env.PORT || 80)
 
 app.use(function (request, response, next) {
     console.log(request.headers.host, request.url)
@@ -18,5 +17,7 @@ app.get("/", (req, res) => {
 app.get("/home", (req, res) => {
     res.sendFile(`${__dirname}/views/home.html`)
 })
+
+app.listen(process.env.PORT || 80)
 
 module.exports = app
