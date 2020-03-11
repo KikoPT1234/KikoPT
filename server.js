@@ -1,13 +1,10 @@
+const forceSecure = require("force-secure-express")
 const express = require("express")
 const app = express()
 
-app.use((request, response, next) => {
-    console.log(request.headers.host, request.url, request.secure)
-    if (!request.secure) {
-        return response.redirect("https://" + request.headers.host + request.url);
-    }
-    next()
-});
+app.use(forceSecure([
+    "kikopt.herokuapp.com"
+]));
 
 app.use(express.static("public"));
 
