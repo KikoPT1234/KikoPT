@@ -2,12 +2,12 @@ const express = require("express")
 const app = express()
 app.listen(process.env.PORT || 80)
 
-/*app.use(function (request, response, next) {
+app.use(function (request, response, next) {
     if (!request.secure) {
         response.redirect("https://" + request.headers.host + request.url);
     }
     next()
-});*/
+});
 
 app.use(express.static("public"));
 
