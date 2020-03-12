@@ -42,8 +42,51 @@ var Topnav = function (_React$Component) {
     return Topnav;
 }(React.Component);
 
-var Header = function (_React$Component2) {
-    _inherits(Header, _React$Component2);
+var Banner = function (_React$Component2) {
+    _inherits(Banner, _React$Component2);
+
+    function Banner() {
+        _classCallCheck(this, Banner);
+
+        return _possibleConstructorReturn(this, (Banner.__proto__ || Object.getPrototypeOf(Banner)).apply(this, arguments));
+    }
+
+    _createClass(Banner, [{
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "div",
+                { className: "banner" },
+                React.createElement(
+                    "div",
+                    { className: "blocks" },
+                    React.createElement("div", { className: "block-1" }),
+                    React.createElement("div", { className: "block-2" }),
+                    React.createElement("div", { className: "img" })
+                ),
+                React.createElement(
+                    "div",
+                    { className: "text" },
+                    React.createElement(
+                        "h1",
+                        null,
+                        "Kiko"
+                    ),
+                    React.createElement(
+                        "h2",
+                        null,
+                        "Hey, I'm Kiko, and I do Web Development and Node.JS."
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Banner;
+}(React.Component);
+
+var Header = function (_React$Component3) {
+    _inherits(Header, _React$Component3);
 
     function Header() {
         _classCallCheck(this, Header);
@@ -58,12 +101,7 @@ var Header = function (_React$Component2) {
                 "div",
                 { className: "header" },
                 React.createElement(Topnav, null),
-                React.createElement(
-                    "div",
-                    { className: "banner" },
-                    React.createElement("div", { className: "img" }),
-                    React.createElement("div", { className: "title" })
-                )
+                React.createElement(Banner, null)
             );
         }
     }]);

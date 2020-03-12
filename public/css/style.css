@@ -7,21 +7,26 @@
 }
 
 body {
-    font-family: "Open Sans";
+    font-family: "Nunito", sans-serif;
     min-height: 100vh;
+    background: #002651;
+    color: white;
+    overflow-x: hidden;
 }
 
 .topnav {
     position: fixed;
     z-index: 10;
     width: 100%;
-    background: #222;
+    /* background: #222; */
     color: white;
-    box-shadow: 0 0px 10px black;
+    /* box-shadow: 0 0px 10px black; */
 }
 
 .header {
-    height: 60vh;
+    height: 100vh;
+    position: relative;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, .6);
 }
 
 .container {
@@ -33,16 +38,77 @@ body {
     margin: 10px;
 }
 
-.banner.img {
-    height: 100%;
-}
-
 .banner {
     height: 100%;
+    position: relative;
+}
+
+.blocks {
+    max-width: 100vw;
+    height: 100vh;
+}
+
+@media only screen and (orientation: portrait) {
+    .block {
+        width: 50vw !important;
+    }
+
+    .block-2 {
+        right: 50vw !important;
+    }
+}
+
+.block-1 {
+    left: 100px;
+    background: linear-gradient(135deg, #28C7FA, #3900FB);
+    height: 90vh;
+    width: 400px;
+    position: absolute;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .6);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.block-2 {
+    background: #3D5AF1;
+    opacity: .4;
+    width: 300px;
+    height: 10000px;
+    transform: rotate(45deg);
+    right: 200px;
+    top: -4500px;
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .6);
+}
+
+.banner h1 {
+    position: absolute;
+    transform: translateY(-50%);
+    font-size: 200px;
+    top: 25%;
+    z-index: 1;
+    left: 40px;
+}
+
+.banner h2 {
+    position: absolute;
+    top: 25%;
+    font-size: 40px;
+    width: calc(100vw - 640px);
+    right: 40px;
+    text-align: justify;
+    transform: translateY(-50%);
 }
 
 .img {
-    height: 100%;
-    background: url(../images/oscar.JPG) no-repeat center;
+    position: absolute;
+    bottom: 20px;
+    width: 400px;
+    height: 400px;
+    left: 150px;
+    background: url(../images/Minehut.jfif) no-repeat center;
     background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .6);
 }

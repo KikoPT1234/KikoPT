@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/KikoPT1234/KikoPT#readme",
   "dependencies": {
-    "@types/jquery": "^3.3.33",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
     "braces": "^3.0.2",
@@ -30,6 +29,7 @@
     "heroku": "^7.39.0"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.33",
     "webpack-cli": "^3.3.11"
   }
 }
