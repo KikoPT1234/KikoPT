@@ -22,6 +22,7 @@ var Page = function (_React$Component) {
                 "div",
                 { className: "root" },
                 React.createElement(Header, { selected: this.props.selected }),
+                React.createElement("div", { className: "separator" }),
                 React.createElement(Container, { value: this.props.value })
             );
         }
