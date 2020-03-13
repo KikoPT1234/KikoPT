@@ -60,23 +60,20 @@ var Banner = function (_React$Component2) {
                 React.createElement(
                     "div",
                     { className: "blocks" },
-                    React.createElement("div", { className: "block-1" }),
-                    React.createElement("div", { className: "block-2" }),
-                    React.createElement("div", { className: "img" })
+                    React.createElement(
+                        "div",
+                        { className: "block-1" },
+                        React.createElement(
+                            "h1",
+                            null,
+                            "Kiko"
+                        )
+                    )
                 ),
                 React.createElement(
-                    "div",
-                    { className: "text" },
-                    React.createElement(
-                        "h1",
-                        null,
-                        "Kiko"
-                    ),
-                    React.createElement(
-                        "h2",
-                        null,
-                        "Hey, I'm Kiko, and I do Web Development and Node.JS."
-                    )
+                    "h2",
+                    null,
+                    "Hey, I'm Kiko, and I do Web Development and Node.JS."
                 )
             );
         }

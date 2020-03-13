@@ -16,14 +16,11 @@ class Banner extends React.Component {
         return (
             <div className="banner">
                 <div className="blocks">
-                    <div className="block-1"></div>
-                    <div className="block-2"></div>
-                    <div className="img"></div>
+                    <div className="block-1">
+                        <h1>Kiko</h1>
+                    </div>
                 </div>
-                <div className="text">
-                    <h1>Kiko</h1>
-                    <h2>Hey, I'm Kiko, and I do Web Development and Node.JS.</h2>
-                </div>
+                <h2>Hey, I'm Kiko, and I do Web Development and Node.JS.</h2>
             </div>
         )
     }

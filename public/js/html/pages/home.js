@@ -21,7 +21,7 @@ var Home = function (_React$Component) {
             return React.createElement(
                 "h2",
                 null,
-                "Hello, my name is Kiko. I'm a student who does Node.JS and Web Developing."
+                "Welcome to my website. Here you will find useful tools for the Minehut community such as docs, server info, and others."
             );
         }
     }]);

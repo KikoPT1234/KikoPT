@@ -1,7 +1,7 @@
 class Home extends React.Component {
     render() {
         return (
-            <h2>Hello, my name is Kiko. I'm a student who does Node.JS and Web Developing.</h2>
+            <h2>Welcome to my website. Here you will find useful tools for the Minehut community such as docs, server info, and others.</h2>
         )
     }
 }
