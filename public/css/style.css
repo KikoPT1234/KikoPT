@@ -132,6 +132,8 @@ header .banner .buttons button h3 {
 }
 
 header .banner .buttons button img {
+  -webkit-filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
   height: 100%;
   width: auto;
   opacity: 1;
