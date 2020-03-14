@@ -15,10 +15,11 @@ $(document).ready(() => {
         $(".popup").css({
             "transform": "scale(.5)",
             "opacity": "0",
+            "z-index": "1"
         })
         $("body").removeAttr("style")
         scrollFunction()
-        setTimeout(() => $("div.discord").removeAttr("style"))
+        setTimeout(() => $("div.discord").removeAttr("style"), 250)
     })
 })
 
