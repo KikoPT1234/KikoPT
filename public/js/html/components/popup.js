@@ -19,6 +19,7 @@ var Popup = function (_React$Component) {
         key: "render",
         value: function render() {
             var classes = "popup " + this.props.class;
+            var style = { background: this.props.color || "#555" };
             return React.createElement(
                 "div",
                 { className: classes },
@@ -27,7 +28,7 @@ var Popup = function (_React$Component) {
                     { className: "text" },
                     React.createElement(
                         "div",
-                        { className: "popupTitle" },
+                        { className: "popupTitle", style: style },
                         React.createElement(
                             "h1",
                             null,

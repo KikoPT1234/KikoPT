@@ -75,7 +75,7 @@ header {
                     background: linear-gradient(-45deg, #004CFF, #0088FF);
                 }
                 &.discord {
-                    background: linear-gradient(-45deg, #8092FF, #97A9FF);
+                    background: linear-gradient(-45deg, rgb(87, 104, 167), #738ADB);
                 }
                 h3 {
                     display: inline-block;
@@ -224,7 +224,7 @@ header {
             0 4px 6px rgba(0, 0, 0, .15);
         .popupTitle {
             width: 100%;
-            background: #738ADB;
+            background: #555;
             padding: 20px 0;
         }
         h1, h2 {

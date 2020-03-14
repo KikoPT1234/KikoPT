@@ -90,7 +90,7 @@ header .banner .buttons button.minehut {
 }
 
 header .banner .buttons button.discord {
-  background: linear-gradient(-45deg, #8092FF, #97A9FF);
+  background: linear-gradient(-45deg, #5768a7, #738ADB);
 }
 
 header .banner .buttons button h3 {
@@ -249,7 +249,7 @@ header .banner .images img.nodejs {
 
 .popup .text .popupTitle {
   width: 100%;
-  background: #738ADB;
+  background: #555;
   padding: 20px 0;
 }
 
