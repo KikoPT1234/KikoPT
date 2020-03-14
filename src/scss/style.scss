@@ -17,12 +17,16 @@ body {
 header {
     min-height: 100vh;
     .topnav {
+        transition: background 250ms, box-shadow 250ms;
         position: fixed;
         width: 100vw;
-        //background: #333;
+        z-index: 10;
         li {
             display: inline-block;
             margin: 10px;
+            &.selected {
+                font-weight: bold;
+            }
         }
     }
 
@@ -47,6 +51,7 @@ header {
             position: relative;
             width: 100%;
             button {
+                transition: filter 250ms;
                 position: relative;
                 padding: 10px;
                 //width: 300px;
@@ -63,6 +68,9 @@ header {
                 box-shadow: 
                     0 10px 20px rgba(0, 0, 0, .1),
                     0 4px 6px rgba(0, 0, 0, .15);
+                &:hover {
+                    filter: brightness(1.2);
+                }
                 &.minehut {
                     background: linear-gradient(-45deg, #004CFF, #0088FF);
                 }
@@ -172,5 +180,64 @@ header {
         * {
             margin-right: 0 !important;
         }
+    }
+
+    .popup {
+        .text {
+            width: 80% !important;
+            h1 {
+                font-size: 3rem !important;
+            }
+            h2 {
+                font-size: 1.5rem !important;
+            }
+        }
+    }
+}
+
+
+
+.popup {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    transition: transform 250ms, opacity 250ms;
+    transform: scale(.5);
+    z-index: -2;
+    .text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        min-height: 50%;
+        background: #333;
+        border-radius: 20px;
+        overflow: hidden;
+        z-index: 12;
+        box-shadow: 
+            0 10px 20px rgba(0, 0, 0, .1),
+            0 4px 6px rgba(0, 0, 0, .15);
+        .popupTitle {
+            width: 100%;
+            background: #738ADB;
+            padding: 20px 0;
+        }
+        h1, h2 {
+            margin: 20px;
+        }
+    }
+    .black {
+        position: absolute;
+        width: 200vw;
+        height: 200vh;
+        background: rgba(0, 0, 0, .2);
+        top: -50vh;
+        left: -50vw;
+        z-index: 11;
     }
 }

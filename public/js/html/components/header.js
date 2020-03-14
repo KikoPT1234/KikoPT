@@ -18,12 +18,19 @@ var Topnav = function (_React$Component) {
     _createClass(Topnav, [{
         key: "render",
         value: function render() {
+            var topnav = this;
+            var array = ["Home", "Minehut", "Other Stuff"];
             return React.createElement(
                 "div",
-                { className: "topnav" },
+                { id: this.props.selected, className: "topnav" },
                 React.createElement(
                     "ul",
                     null,
+                    React.createElement(
+                        "li",
+                        null,
+                        "Home"
+                    ),
                     React.createElement(
                         "li",
                         null,
@@ -54,6 +61,31 @@ var Banner = function (_React$Component2) {
     _createClass(Banner, [{
         key: "render",
         value: function render() {
+            var buttons = this.props.buttons === "true" ? React.createElement(
+                "div",
+                { className: "buttons" },
+                React.createElement(
+                    "button",
+                    { className: "minehut" },
+                    React.createElement("img", { src: "images/minehut.png" }),
+                    React.createElement(
+                        "h3",
+                        null,
+                        "Minehut"
+                    )
+                ),
+                React.createElement(
+                    "button",
+                    { className: "discord" },
+                    React.createElement("img", { src: "images/discord.png" }),
+                    React.createElement(
+                        "h3",
+                        null,
+                        "Discord"
+                    )
+                ),
+                React.createElement(Popup, { "class": "discord", title: "Discord", subtitle: "Contact me on Discord @KikoPT#1234" })
+            ) : React.createElement("div", null);
             return React.createElement(
                 "div",
                 { className: "banner" },
@@ -63,37 +95,14 @@ var Banner = function (_React$Component2) {
                     React.createElement(
                         "h1",
                         null,
-                        "I'm Kiko"
+                        this.props.title
                     ),
                     React.createElement(
                         "h2",
                         null,
-                        "Hey there, I'm a student and I've been coding for quite some time. I code in JavaScript and am part of the Minehut community. I love making websites and discord bots, so if you're in need of one, you might as well contact me!"
+                        this.props.subtitle
                     ),
-                    React.createElement(
-                        "div",
-                        { className: "buttons" },
-                        React.createElement(
-                            "button",
-                            { className: "minehut" },
-                            React.createElement("img", { src: "images/minehut.png" }),
-                            React.createElement(
-                                "h3",
-                                null,
-                                "Minehut"
-                            )
-                        ),
-                        React.createElement(
-                            "button",
-                            { className: "discord" },
-                            React.createElement("img", { src: "images/discord.png" }),
-                            React.createElement(
-                                "h3",
-                                null,
-                                "Discord"
-                            )
-                        )
-                    )
+                    buttons
                 ),
                 React.createElement(
                     "div",
@@ -125,8 +134,8 @@ var Header = function (_React$Component3) {
             return React.createElement(
                 "header",
                 null,
-                React.createElement(Topnav, null),
-                React.createElement(Banner, null)
+                React.createElement(Topnav, { selected: this.props.selected }),
+                React.createElement(Banner, { title: this.props.title, subtitle: this.props.subtitle, buttons: this.props.buttons })
             );
         }
     }]);

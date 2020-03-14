@@ -1,8 +1,15 @@
 class Topnav extends React.Component {
     render() {
+        const topnav = this
+        const array = [
+            "Home",
+            "Minehut",
+            "Other Stuff"
+        ]
         return (
-            <div className="topnav">
+            <div id={this.props.selected} className="topnav">
                 <ul>
+                    <li>Home</li>
                     <li>Minehut</li>
                     <li>Other Stuff</li>
                 </ul>
@@ -13,15 +20,17 @@ class Topnav extends React.Component {
 
 class Banner extends React.Component {
     render() {
+        const buttons = this.props.buttons === "true" ? <div className="buttons">
+            <button className="minehut"><img src="images/minehut.png"></img><h3>Minehut</h3></button>
+            <button className="discord"><img src="images/discord.png"></img><h3>Discord</h3></button>
+            <Popup class="discord" title="Discord" subtitle="Contact me on Discord @KikoPT#1234"/>
+        </div> : <div></div>
         return (
             <div className="banner">
                 <div className="title">
-                    <h1>I'm Kiko</h1>
-                    <h2>Hey there, I'm a student and I've been coding for quite some time. I code in JavaScript and am part of the Minehut community. I love making websites and discord bots, so if you're in need of one, you might as well contact me!</h2>
-                    <div className="buttons">
-                        <button className="minehut"><img src="images/minehut.png"></img><h3>Minehut</h3></button>
-                        <button className="discord"><img src="images/discord.png"></img><h3>Discord</h3></button>
-                    </div>
+                    <h1>{this.props.title}</h1>
+                    <h2>{this.props.subtitle}</h2>
+                    {buttons}
                 </div>
                 <div className="images">
                     <img src="images/discord.png" className="discord"></img>
@@ -38,8 +47,8 @@ class Header extends React.Component {
     render() {
         return (
             <header>
-                <Topnav />
-                <Banner />
+                <Topnav selected={this.props.selected}/>
+                <Banner title={this.props.title} subtitle={this.props.subtitle} buttons={this.props.buttons}/>
             </header>
         )
     }
