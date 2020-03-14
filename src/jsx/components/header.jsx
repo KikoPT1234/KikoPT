@@ -1,17 +1,11 @@
 class Topnav extends React.Component {
     render() {
-        const topnav = this
-        const array = [
-            "Home",
-            "Minehut",
-            "Other Stuff"
-        ]
         return (
             <div id={this.props.selected} className="topnav">
                 <ul>
-                    <li>Home</li>
-                    <li>Minehut</li>
-                    <li>Other Stuff</li>
+                    <li><a href="./home">Home</a></li>
+                    <li><a href="./minehut">Minehut</a></li>
+                    <li><a href="./other">Other Stuff</a></li>
                 </ul>
             </div>
         )
@@ -25,9 +19,10 @@ class Banner extends React.Component {
             <button className="discord"><img src="images/discord.png"></img><h3>Discord</h3></button>
             <Popup class="discord" title="Discord" subtitle="Contact me on Discord @KikoPT#1234" color="linear-gradient(-45deg, #5768a7, #738ADB)"/>
         </div> : <div></div>
+        const className = this.props.class ? this.props.class + " title" : "title"
         return (
             <div className="banner">
-                <div className="title">
+                <div className={className}>
                     <h1>{this.props.title}</h1>
                     <h2>{this.props.subtitle}</h2>
                     {buttons}
@@ -48,7 +43,7 @@ class Header extends React.Component {
         return (
             <header>
                 <Topnav selected={this.props.selected}/>
-                <Banner title={this.props.title} subtitle={this.props.subtitle} buttons={this.props.buttons}/>
+                <Banner class={this.props.class} title={this.props.title} subtitle={this.props.subtitle} buttons={this.props.buttons}/>
             </header>
         )
     }

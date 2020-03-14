@@ -21,29 +21,56 @@ header {
         position: fixed;
         width: 100vw;
         z-index: 10;
-        li {
-            display: inline-block;
-            margin: 10px;
-            &.selected {
-                font-weight: bold;
+        overflow-y: hidden;
+        ul {
+            position: relative;
+            float: right;
+            right: 40px;
+            li {
+                display: inline-block;
+                margin: 10px;
+                font-size: 1.3rem;
+                a {
+                    padding-bottom: 5px;
+                    color: white;
+                    text-decoration: none;
+                }
+                &.selected a {
+                    font-weight: bold;
+                    border-bottom: 100px solid white
+                }
             }
         }
     }
 
     .banner {
         .title {
-            position: relative;
-            text-align: justify;
-            left: 10%;
-            width: 80%;
-            top: 15vh;
-            margin-bottom: 100px;
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: right;
             h1 {
-                font-size: 4rem;
+                font-size: 5rem;
             }
             h2 {
-                font-size: 2rem;
+                font-size: 3rem;
                 font-weight: normal;
+            }
+            &.main {
+                position: relative;
+                transform: none;
+                text-align: justify;
+                left: 10%;
+                width: 80%;
+                top: 15vh;
+                margin-bottom: 100px;
+                h1 {
+                    font-size: 4rem;
+                }
+                h2 {
+                    font-size: 2rem;
+                }
             }
         }
 
@@ -165,7 +192,15 @@ header {
     }
 
     .title {
-        top: 5vh !important;
+        text-align: center !important;
+        right: initial !important;
+        left: 50% !important;
+        &.main {
+            text-align: left !important;
+            right: initial !important;
+            left: 10% !important;
+            top: 5vh !important;
+        }
     }
 
     .buttons {

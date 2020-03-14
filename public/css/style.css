@@ -25,19 +25,54 @@ header .topnav {
   position: fixed;
   width: 100vw;
   z-index: 10;
+  overflow-y: hidden;
 }
 
-header .topnav li {
+header .topnav ul {
+  position: relative;
+  float: right;
+  right: 40px;
+}
+
+header .topnav ul li {
   display: inline-block;
   margin: 10px;
+  font-size: 1.3rem;
 }
 
-header .topnav li.selected {
+header .topnav ul li a {
+  padding-bottom: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+header .topnav ul li.selected a {
   font-weight: bold;
+  border-bottom: 100px solid white;
 }
 
 header .banner .title {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: right;
+}
+
+header .banner .title h1 {
+  font-size: 5rem;
+}
+
+header .banner .title h2 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+header .banner .title.main {
   position: relative;
+  -webkit-transform: none;
+          transform: none;
   text-align: justify;
   left: 10%;
   width: 80%;
@@ -45,13 +80,12 @@ header .banner .title {
   margin-bottom: 100px;
 }
 
-header .banner .title h1 {
+header .banner .title.main h1 {
   font-size: 4rem;
 }
 
-header .banner .title h2 {
+header .banner .title.main h2 {
   font-size: 2rem;
-  font-weight: normal;
 }
 
 header .banner .buttons {
@@ -189,6 +223,14 @@ header .banner .images img.nodejs {
     width: 80vw;
   }
   .title {
+    text-align: center !important;
+    right: initial !important;
+    left: 50% !important;
+  }
+  .title.main {
+    text-align: left !important;
+    right: initial !important;
+    left: 10% !important;
     top: 5vh !important;
   }
   .buttons {

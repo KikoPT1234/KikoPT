@@ -19,6 +19,7 @@ ReactDOM.render(
         title={title}
         subtitle={subtitle} 
         buttons="true"
-        selected="Home" 
+        selected="Home"
+        class="main"
     />
 , document.querySelector("body"))

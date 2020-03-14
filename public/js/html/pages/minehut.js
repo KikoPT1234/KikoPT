@@ -6,40 +6,39 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Home = function (_React$Component) {
-    _inherits(Home, _React$Component);
+var Minehut = function (_React$Component) {
+    _inherits(Minehut, _React$Component);
 
-    function Home() {
-        _classCallCheck(this, Home);
+    function Minehut() {
+        _classCallCheck(this, Minehut);
 
-        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Minehut.__proto__ || Object.getPrototypeOf(Minehut)).apply(this, arguments));
     }
 
-    _createClass(Home, [{
+    _createClass(Minehut, [{
         key: "render",
         value: function render() {
             return React.createElement(
                 "h2",
                 null,
-                "Welcome to my website. Here you will find useful tools for the Minehut community such as docs, server info, and others."
+                "Minehut."
             );
         }
     }]);
 
-    return Home;
+    return Minehut;
 }(React.Component);
 
 // =========================================
 
-var title = "I'm Kiko";
-var subtitle = "Hey there, I'm a student and I've been coding for quite some time. I code in JavaScript and am part of the Minehut community. I love making websites and discord bots, so if you're in need of one, you might as well contact me!";
+var title = "Kiko";
+var subtitle = "Minehut";
 
 // =========================================
 ReactDOM.render(React.createElement(Page, {
-    value: React.createElement(Home, null),
+    value: React.createElement(Minehut, null),
     title: title,
     subtitle: subtitle,
-    buttons: "true",
-    selected: "Home",
-    "class": "main"
+    buttons: "false",
+    selected: "Minehut"
 }), document.querySelector("body"));
