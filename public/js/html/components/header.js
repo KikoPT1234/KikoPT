@@ -94,7 +94,7 @@ var Banner = function (_React$Component2) {
                         "Discord"
                     )
                 ),
-                React.createElement(Popup, { "class": "discord", title: "Discord", subtitle: "Contact me on Discord @KikoPT#1234", color: "linear-gradient(-45deg, #5768a7, #738ADB)" })
+                React.createElement(Popup, { "class": "discord", title: "Discord", subtitle: "Contact me on Discord @Kiko#6282", color: "linear-gradient(-45deg, #5768a7, #738ADB)" })
             ) : React.createElement("div", null);
             var className = this.props.class ? this.props.class + " title" : "title";
             return React.createElement(
