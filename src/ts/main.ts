@@ -3,6 +3,9 @@ $(document).ready(() => {
         if ($(li).text() === $(".topnav").attr("id")) $(li).addClass("selected")
     })
     $(window).scroll(scrollFunction)
+    $("button.minehut").click(() => {
+        window.location.href = "/minehut"
+    })
     $("button.discord").click(() => {
         $("div.discord").css({
             "opacity": "1",
