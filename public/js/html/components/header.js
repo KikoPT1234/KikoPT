@@ -95,10 +95,14 @@ var Banner = function (_React$Component2) {
                         )
                     )
                 ),
-                React.createElement("img", { src: "images/discord.png", className: "discord" }),
-                React.createElement("img", { src: "images/minehut.png", className: "minehut" }),
-                React.createElement("img", { src: "images/html5.png", className: "html5" }),
-                React.createElement("img", { src: "images/nodejs.png", className: "nodejs" })
+                React.createElement(
+                    "div",
+                    { className: "images" },
+                    React.createElement("img", { src: "images/discord.png", className: "discord" }),
+                    React.createElement("img", { src: "images/minehut.png", className: "minehut" }),
+                    React.createElement("img", { src: "images/html5.png", className: "html5" }),
+                    React.createElement("img", { src: "images/nodejs.png", className: "nodejs" })
+                )
             );
         }
     }]);

@@ -23,10 +23,12 @@ class Banner extends React.Component {
                         <button className="discord"><img src="images/discord.png"></img><h3>Discord</h3></button>
                     </div>
                 </div>
-                <img src="images/discord.png" className="discord"></img>
-                <img src="images/minehut.png" className="minehut"></img>
-                <img src="images/html5.png" className="html5"></img>
-                <img src="images/nodejs.png" className="nodejs"></img>
+                <div className="images">
+                    <img src="images/discord.png" className="discord"></img>
+                    <img src="images/minehut.png" className="minehut"></img>
+                    <img src="images/html5.png" className="html5"></img>
+                    <img src="images/nodejs.png" className="nodejs"></img>
+                </div>
             </div>
         )
     }

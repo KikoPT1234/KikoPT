@@ -9,6 +9,8 @@ body {
   background: #1E1E1E;
   color: white;
   overflow-x: hidden;
+  -webkit-transition: background 250ms;
+  transition: background 250ms;
 }
 
 header {
@@ -97,15 +99,24 @@ header .banner .buttons button * {
   margin-right: 5px;
 }
 
-header .banner img {
+header .banner .images {
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
+
+header .banner .images img {
   width: 25vw;
   height: auto;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   opacity: .1;
 }
 
-header .banner img.discord {
+header .banner .images img.discord {
   width: 50vw;
   top: 100px;
   right: -100px;
@@ -113,14 +124,14 @@ header .banner img.discord {
           transform: translate(-50%, -50%) rotate(15deg);
 }
 
-header .banner img.html5 {
+header .banner .images img.html5 {
   top: 80%;
   -webkit-transform: translate(-50%, -50%) rotate(-15deg);
           transform: translate(-50%, -50%) rotate(-15deg);
   left: 20%;
 }
 
-header .banner img.minehut {
+header .banner .images img.minehut {
   width: 35vw;
   top: 80%;
   right: -30%;
@@ -128,7 +139,7 @@ header .banner img.minehut {
           transform: translate(-50%, -50%) rotate(-35deg);
 }
 
-header .banner img.nodejs {
+header .banner .images img.nodejs {
   -webkit-transform: translate(-50%, -50%) rotate(10deg);
           transform: translate(-50%, -50%) rotate(10deg);
   top: 120px;

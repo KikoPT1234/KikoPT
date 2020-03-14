@@ -11,6 +11,7 @@ body {
     background: #1E1E1E;
     color: white;
     overflow-x: hidden;
+    transition: background 250ms;
 }
 
 header {
@@ -92,33 +93,40 @@ header {
             }
         }
 
-        img {
-            width: 25vw;
-            height: auto;
+        .images {
+            transition: 250ms;
             position: fixed;
-            z-index: -1;
-            opacity: .1;
-            &.discord {
-                width: 50vw;
-                top: 100px;
-                right: -100px;
-                transform: translate(-50%, -50%) rotate(15deg);
-            }
-            &.html5 {
-                top: 80%;
-                transform: translate(-50%, -50%) rotate(-15deg);
-                left: 20%;
-            }
-            &.minehut {
-                width: 35vw;
-                top: 80%;
-                right: -30%;
-                transform: translate(-50%, -50%) rotate(-35deg);
-            }
-            &.nodejs {
-                transform: translate(-50%, -50%) rotate(10deg);
-                top: 120px;
-                left: 100px;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            img {
+                width: 25vw;
+                height: auto;
+                position: absolute;
+                z-index: -1;
+                opacity: .1;
+                &.discord {
+                    width: 50vw;
+                    top: 100px;
+                    right: -100px;
+                    transform: translate(-50%, -50%) rotate(15deg);
+                }
+                &.html5 {
+                    top: 80%;
+                    transform: translate(-50%, -50%) rotate(-15deg);
+                    left: 20%;
+                }
+                &.minehut {
+                    width: 35vw;
+                    top: 80%;
+                    right: -30%;
+                    transform: translate(-50%, -50%) rotate(-35deg);
+                }
+                &.nodejs {
+                    transform: translate(-50%, -50%) rotate(10deg);
+                    top: 120px;
+                    left: 100px;
+                }
             }
         }
     }
