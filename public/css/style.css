@@ -1,120 +1,175 @@
 * {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    outline: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body {
-    font-family: "Nunito", sans-serif;
-    min-height: 100vh;
-    max-width: 100vw;
-    background: linear-gradient(155deg, rgb(0, 18, 58), rgb(14, 0, 37));
-    color: white;
-    overflow-x: hidden;
+  font-family: "Nunito", sans-serif;
+  background: #1E1E1E;
+  color: white;
+  overflow-x: hidden;
 }
 
-.topnav {
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    /* background: #222; */
-    color: white;
-    /* box-shadow: 0 0px 10px black; */
+header {
+  min-height: 100vh;
 }
 
-.header {
-    height: 60vh;
-    position: relative;
-    text-shadow: 
-        0 10px 20px rgba(0, 0, 0, .4),
-        0 4px 6px rgba(0, 0, 0, .4);
+header .topnav {
+  position: fixed;
+  width: 100vw;
 }
 
-.container {
-    padding: 0 20vw;
+header .topnav li {
+  display: inline-block;
+  margin: 10px;
 }
 
-.topnav li {
-    display: inline-block;
-    margin: 10px;
+header .banner .title {
+  position: relative;
+  text-align: justify;
+  left: 10%;
+  width: 80%;
+  top: 15vh;
+  margin-bottom: 100px;
 }
 
-.banner {
-    height: 100%;
-    position: relative;
+header .banner .title h1 {
+  font-size: 4rem;
 }
 
-.blocks {
-    max-width: 100vw;
-    height: 100%;
+header .banner .title h2 {
+  font-size: 2rem;
+  font-weight: normal;
 }
 
-@media only screen and (max-width: 900px) {
-
-    .blocks .block-1 {
-        position: relative;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60vw;
-        height: 35vh;
-    }
-
-    .banner h1 {
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        font-size: 75px !important;
-    }
-
-    .header .banner h2 {
-        width: 90vw;
-        top: 40vh;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 37px;
-    }
+header .banner .buttons {
+  position: relative;
+  width: 100%;
 }
 
-.block-1 {
-    left: 100px;
-    background: linear-gradient(135deg, #28C7FA, #3900FB);
-    height: 50vh;
-    width: 400px;
-    position: absolute;
-    box-shadow: 
-        0 10px 20px rgba(0, 0, 0, 0.4),
-        0 4px 6px rgba(0, 0, 0, .4);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    z-index: -1;
+header .banner .buttons button {
+  position: relative;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  font-family: "Nunito", sans-serif;
+  height: 64px;
+  text-align: left;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-.blocks h1 {
-    position: absolute;
-    font-size: 150px;
-    top: 20%;
-    z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
+header .banner .buttons button.minehut {
+  background: linear-gradient(-45deg, #004CFF, #0088FF);
 }
 
-.banner h2 {
-    position: absolute;
-    top: 5%;
-    font-size: 40px;
-    width: calc(100vw - 640px);
-    right: 40px;
-    text-align: justify;
-    top: 10%;
+header .banner .buttons button.discord {
+  background: linear-gradient(-45deg, #8092FF, #97A9FF);
+}
+
+header .banner .buttons button h3 {
+  display: inline-block;
+}
+
+header .banner .buttons button img {
+  height: 100%;
+  width: auto;
+  opacity: 1;
+  z-index: 0;
+  position: relative;
+  left: 0;
+}
+
+header .banner .buttons button img[src="images/discord.png"] {
+  margin: 0 -10px;
+}
+
+header .banner .buttons button * {
+  vertical-align: middle;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
+}
+
+header .banner img {
+  width: 25vw;
+  height: auto;
+  position: fixed;
+  z-index: -1;
+  opacity: .1;
+}
+
+header .banner img.discord {
+  width: 50vw;
+  top: 100px;
+  right: -100px;
+  -webkit-transform: translate(-50%, -50%) rotate(15deg);
+          transform: translate(-50%, -50%) rotate(15deg);
+}
+
+header .banner img.html5 {
+  top: 80%;
+  -webkit-transform: translate(-50%, -50%) rotate(-15deg);
+          transform: translate(-50%, -50%) rotate(-15deg);
+  left: 20%;
+}
+
+header .banner img.minehut {
+  width: 35vw;
+  top: 80%;
+  right: -30%;
+  -webkit-transform: translate(-50%, -50%) rotate(-35deg);
+          transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+header .banner img.nodejs {
+  -webkit-transform: translate(-50%, -50%) rotate(10deg);
+          transform: translate(-50%, -50%) rotate(10deg);
+  top: 120px;
+  left: 100px;
 }
 
 .separator {
-    width: 90vw;
-    margin: 30px auto 40px auto;
-    height: 3px;
-    background: rgba(255, 255, 255, .5);
-    border-radius: 5px;
+  width: 95%;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.7);
+  margin: 0 auto 20px auto;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.container {
+  padding: 10px 20vw;
+  width: 60vw;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    padding: 10px 10vw;
+    width: 80vw;
+  }
+  .title {
+    top: 5vh !important;
+  }
+  .buttons {
+    text-align: center;
+  }
+  .buttons button {
+    display: block;
+    width: 100% !important;
+    margin: 10px 0 !important;
+    text-align: center !important;
+  }
+  .buttons * {
+    margin-right: 0 !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

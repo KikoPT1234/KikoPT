@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-shadow: 
+        0 10px 20px rgba(0, 0, 0, .1),
+        0 4px 6px rgba(0, 0, 0, .1);
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background: #1E1E1E;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    min-height: 100vh;
+    .topnav {
+        position: fixed;
+        width: 100vw;
+        //background: #333;
+        li {
+            display: inline-block;
+            margin: 10px;
+        }
+    }
+
+    .banner {
+        .title {
+            position: relative;
+            text-align: justify;
+            left: 10%;
+            width: 80%;
+            top: 15vh;
+            margin-bottom: 100px;
+            h1 {
+                font-size: 4rem;
+            }
+            h2 {
+                font-size: 2rem;
+                font-weight: normal;
+            }
+        }
+
+        .buttons {
+            position: relative;
+            width: 100%;
+            button {
+                position: relative;
+                padding: 10px;
+                //width: 300px;
+                margin: 10px;
+                cursor: pointer;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                color: white;
+                font-size: 2rem;
+                font-family: "Nunito", sans-serif;
+                height: 64px;
+                text-align: left;
+                box-shadow: 
+                    0 10px 20px rgba(0, 0, 0, .1),
+                    0 4px 6px rgba(0, 0, 0, .15);
+                &.minehut {
+                    background: linear-gradient(-45deg, #004CFF, #0088FF);
+                }
+                &.discord {
+                    background: linear-gradient(-45deg, #8092FF, #97A9FF);
+                }
+                h3 {
+                    display: inline-block;
+                }
+                img {
+                    height: 100%;
+                    width: auto;
+                    opacity: 1;
+                    z-index: 0;
+                    position: relative;
+                    left: 0;
+                    &[src="images/discord.png"] {
+                        margin: 0 -10px;
+                    }
+                }
+
+                * {
+                    vertical-align: middle;
+                    position: relative;
+                    bottom: 2px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        img {
+            width: 25vw;
+            height: auto;
+            position: fixed;
+            z-index: -1;
+            opacity: .1;
+            &.discord {
+                width: 50vw;
+                top: 100px;
+                right: -100px;
+                transform: translate(-50%, -50%) rotate(15deg);
+            }
+            &.html5 {
+                top: 80%;
+                transform: translate(-50%, -50%) rotate(-15deg);
+                left: 20%;
+            }
+            &.minehut {
+                width: 35vw;
+                top: 80%;
+                right: -30%;
+                transform: translate(-50%, -50%) rotate(-35deg);
+            }
+            &.nodejs {
+                transform: translate(-50%, -50%) rotate(10deg);
+                top: 120px;
+                left: 100px;
+            }
+        }
+    }
+}
+
+.separator {
+    width: 95%;
+    height: 3px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, .7);
+    margin: 0 auto 20px auto;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, .1),
+        0 4px 6px rgba(0, 0, 0, .1);
+}
+
+.container {
+    padding: 10px 20vw;
+    width: 60vw;
+    text-align: justify
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        padding: 10px 10vw;
+        width: 80vw;
+    }
+
+    .title {
+        top: 5vh !important;
+    }
+
+    .buttons {
+        text-align: center;
+        button {
+            display: block;
+            width: 100% !important;
+            margin: 10px 0 !important;
+            text-align: center !important;
+        }
+        
+        * {
+            margin-right: 0 !important;
+        }
+    }
+}

@@ -59,22 +59,46 @@ var Banner = function (_React$Component2) {
                 { className: "banner" },
                 React.createElement(
                     "div",
-                    { className: "blocks" },
+                    { className: "title" },
+                    React.createElement(
+                        "h1",
+                        null,
+                        "I'm Kiko"
+                    ),
+                    React.createElement(
+                        "h2",
+                        null,
+                        "Hey there, I'm a student and I've been coding for quite some time. I code in JavaScript and am part of the Minehut community. I love making websites and discord bots, so if you're in need of one, you might as well contact me!"
+                    ),
                     React.createElement(
                         "div",
-                        { className: "block-1" },
+                        { className: "buttons" },
                         React.createElement(
-                            "h1",
-                            null,
-                            "Kiko"
+                            "button",
+                            { className: "minehut" },
+                            React.createElement("img", { src: "images/minehut.png" }),
+                            React.createElement(
+                                "h3",
+                                null,
+                                "Minehut"
+                            )
+                        ),
+                        React.createElement(
+                            "button",
+                            { className: "discord" },
+                            React.createElement("img", { src: "images/discord.png" }),
+                            React.createElement(
+                                "h3",
+                                null,
+                                "Discord"
+                            )
                         )
                     )
                 ),
-                React.createElement(
-                    "h2",
-                    null,
-                    "Hey, I'm Kiko, and I do Web Development and Node.JS."
-                )
+                React.createElement("img", { src: "images/discord.png", className: "discord" }),
+                React.createElement("img", { src: "images/minehut.png", className: "minehut" }),
+                React.createElement("img", { src: "images/html5.png", className: "html5" }),
+                React.createElement("img", { src: "images/nodejs.png", className: "nodejs" })
             );
         }
     }]);
@@ -95,8 +119,8 @@ var Header = function (_React$Component3) {
         key: "render",
         value: function render() {
             return React.createElement(
-                "div",
-                { className: "header" },
+                "header",
+                null,
                 React.createElement(Topnav, null),
                 React.createElement(Banner, null)
             );
