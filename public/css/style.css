@@ -100,8 +100,11 @@ header .banner .buttons button * {
 }
 
 header .banner .images {
-  -webkit-transition: 250ms;
-  transition: 250ms;
+  z-index: -1;
+  -webkit-transition: -webkit-filter 250ms;
+  transition: -webkit-filter 250ms;
+  transition: filter 250ms;
+  transition: filter 250ms, -webkit-filter 250ms;
   position: fixed;
   height: 100vh;
   width: 100vw;
