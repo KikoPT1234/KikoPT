@@ -301,7 +301,7 @@ header .banner .images img.nodejs {
 }
 
 .popup .text h1, .popup .text h2 {
-  margin: 20px;
+  margin: 20px !important;
 }
 
 .popup .black {
