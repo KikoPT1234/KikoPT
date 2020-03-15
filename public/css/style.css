@@ -296,10 +296,10 @@ header .banner .images img.nodejs {
 }
 
 .popup .text .popupTitle {
-  width: 106%;
+  width: 102%;
   background: #555;
   padding: 20px 0;
-  margin: 0 -3%;
+  margin: 0 -1%;
   border-radius: 20px 20px 20px 20px;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
