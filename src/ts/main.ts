@@ -29,7 +29,6 @@ $(document).ready(() => {
 function scrollFunction() {
     if ($(window).scrollTop() > 0) {
         $(".images").css("filter", "blur(10px)")
-        $("body").css("background", "#111")
         $(".topnav").css({
             "background": "#111",
             "box-shadow": "0 10px 20px rgba(0, 0, 0, .1), 0 4px 6px rgba(0, 0, 0, .15)"
@@ -37,7 +36,6 @@ function scrollFunction() {
     }
     else {
         $(".images").removeAttr("style")
-        $("body").removeAttr("style")
         $(".topnav").removeAttr("style")
     }
 }
