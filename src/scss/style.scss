@@ -78,7 +78,7 @@ header {
             position: relative;
             width: 100%;
             button {
-                transition: filter 250ms;
+                transition: 250ms cubic-bezier(0, 0, 0, 1);
                 position: relative;
                 padding: 10px;
                 //width: 300px;
@@ -96,13 +96,18 @@ header {
                     0 10px 20px rgba(0, 0, 0, .1),
                     0 4px 6px rgba(0, 0, 0, .15);
                 &:hover {
-                    filter: brightness(1.2);
+                    filter: brightness(1.5);
+                    background-position: bottom right !important;
                 }
                 &.minehut {
-                    background: linear-gradient(-45deg, #004CFF, #0088FF);
+                    background: linear-gradient(-45deg,#0088FF, #004CFF, #0088FF);
+                    background-size: 200%;
+                    background-position: top left;
                 }
                 &.discord {
-                    background: linear-gradient(-45deg, rgb(87, 104, 167), #738ADB);
+                    background: linear-gradient(-45deg, #738ADB, rgb(87, 104, 167), #738ADB);
+                    background-size: 200%;
+                    background-position: top left;
                 }
                 h3 {
                     display: inline-block;
@@ -132,7 +137,7 @@ header {
         .images {
             background: linear-gradient(200deg, rgba(171, 171, 171,0.05) 0%, rgba(171, 171, 171,0.05) 23%,rgba(90, 90, 90,0.05) 23%, rgba(90, 90, 90,0.05) 48%,rgba(65, 65, 65,0.05) 48%, rgba(65, 65, 65,0.05) 61%,rgba(232, 232, 232,0.05) 61%, rgba(232, 232, 232,0.05) 100%),linear-gradient(126deg, rgba(194, 194, 194,0.05) 0%, rgba(194, 194, 194,0.05) 11%,rgba(127, 127, 127,0.05) 11%, rgba(127, 127, 127,0.05) 33%,rgba(117, 117, 117,0.05) 33%, rgba(117, 117, 117,0.05) 99%,rgba(248, 248, 248,0.05) 99%, rgba(248, 248, 248,0.05) 100%),linear-gradient(144deg, rgba(64, 64, 64,0.05) 0%, rgba(64, 64, 64,0.05) 33%,rgba(211, 211, 211,0.05) 33%, rgba(211, 211, 211,0.05) 50%,rgba(53, 53, 53,0.05) 50%, rgba(53, 53, 53,0.05) 75%,rgba(144, 144, 144,0.05) 75%, rgba(144, 144, 144,0.05) 100%),linear-gradient(329deg, hsl(148,0%,0%),hsl(148,0%,0%));
             background-size: 200%;
-            animation: background-pos 80s linear infinite;
+            //animation: background-pos 80s linear infinite;
             z-index: -1;
             transition: filter 250ms;
             position: fixed;
@@ -184,15 +189,55 @@ header {
 }
 
 .container {
-    padding: 10px 20vw;
-    width: 60vw;
+    padding: 10px 20%;
+    width: 60%;
     text-align: justify
+}
+
+.no-container {
+    margin: 0 -15vw;
+}
+
+.cards {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 4vw;
+    .card {
+        transition: 250ms cubic-bezier(0, 0, 0, 1);
+        color: white;
+        text-decoration: none;
+        background: linear-gradient(-45deg, #0088FF, #004CFF, #0088FF);
+        background-size: 200%;
+        background-position: top left;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 
+            0 10px 20px rgba(0, 0, 0, .1),
+            0 4px 6px rgba(0, 0, 0, .15);
+        h1 {
+            font-size: 1.8rem;
+        }
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, .1),
+                0 4px 15px -10px rgba(0, 0, 0, .15);
+            background-position: bottom right;
+            filter: brightness(1.5);
+        }
+    }
 }
 
 @media only screen and (max-width: 700px) {
     .container {
-        padding: 10px 10vw;
-        width: 80vw;
+        padding: 10px 10%;
+        width: 80%;
+    }
+
+    body .no-container {
+        margin: 0;
     }
 
     .title {
