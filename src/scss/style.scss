@@ -98,6 +98,7 @@ header {
                 &:hover {
                     filter: brightness(1.5);
                     background-position: bottom right !important;
+                    transform: scale(1.05);
                 }
                 &.minehut {
                     background: linear-gradient(-45deg,#0088FF, #004CFF, #0088FF);

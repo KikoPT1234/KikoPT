@@ -116,6 +116,8 @@ header .banner .buttons button:hover {
   -webkit-filter: brightness(1.5);
           filter: brightness(1.5);
   background-position: bottom right !important;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 header .banner .buttons button.minehut {
