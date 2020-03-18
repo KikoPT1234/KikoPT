@@ -37,6 +37,11 @@ var Topnav = function (_React$Component) {
                     React.createElement("div", { className: "stripe" })
                 ),
                 React.createElement(
+                    "div",
+                    { className: "logo" },
+                    "Kiko"
+                ),
+                React.createElement(
                     "ul",
                     null,
                     React.createElement(

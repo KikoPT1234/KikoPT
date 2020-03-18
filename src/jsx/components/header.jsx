@@ -15,6 +15,7 @@ class Topnav extends React.Component {
                     <div className="stripe"></div>
                     <div className="stripe"></div>
                 </div>
+                <div className="logo">Kiko</div>
                 <ul>
                     <li><a href={`${path}home`}>Home</a></li>
                     <li><a href={`${path}minehut`}>Minehut</a></li>

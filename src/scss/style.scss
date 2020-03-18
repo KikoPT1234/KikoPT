@@ -37,7 +37,7 @@ header {
             top: 50%;
             transform: translateY(-50%);
             width: 30px;
-            left: 5px;
+            left: 10px;
             text-align: center;
             cursor: pointer;
             .stripe {
@@ -54,13 +54,21 @@ header {
         height: 50px;
         transition: background 250ms, box-shadow 250ms;
         position: fixed;
-        width: 100vw;
+        width: 100%;
         z-index: 10;
         overflow-y: hidden;
+        .logo {
+            font-weight: bold;
+            font-size: 2rem;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
         ul {
             position: relative;
             float: right;
-            right: 40px;
+            right: 10px;
             li {
                 display: inline-block;
                 margin: 10px;
@@ -289,19 +297,27 @@ header {
                 background: initial;
                 ul {
                     transform: translateX(-100%);
+                    opacity: 0;
                 }
             }
             background: #111;
             overflow-y: visible;
-            width: 100vw;
+            width: 100%;
             text-align: right;
             //background: #111;
             .button {
                 display: block;
             }
+            .logo {
+                left: initial;
+                right: 10px;
+            }
             ul {
+                box-shadow: 
+                    rgba(0, 0, 0, 0.1) 0px 10px 20px, 
+                    rgba(0, 0, 0, 0.15) 0px 4px 6px;
                 position: absolute;
-                transition: transform 250ms cubic-bezier(0, 0, 0, 1);
+                transition: transform 250ms cubic-bezier(0, 0, 0, 1), opacity 250ms cubic-bezier(0, 0, 0, 1);
                 width: 60%;
                 height: 100vh;
                 left: 0;
