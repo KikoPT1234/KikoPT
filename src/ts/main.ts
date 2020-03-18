@@ -3,6 +3,8 @@ $(document).ready(() => {
         if ($(li).text() === $(".topnav").attr("id")) $(li).addClass("selected")
     })
     $(window).scroll(scrollFunction)
+    $(".topnav .button").click(topnavClick)
+    $(".dark").click(topnavClick)
     $("button.minehut").click(() => {
         window.location.href = "/minehut"
     })
@@ -37,5 +39,21 @@ function scrollFunction() {
     else {
         $(".images").removeAttr("style")
         $(".topnav").removeAttr("style")
+    }
+}
+
+function topnavClick {
+    if ($(".topnav").hasClass("hidden")) {
+        $(".topnav").removeClass("hidden")
+        $(".dark").removeClass("hidden")
+        $(".stripe:nth-child(1)").css("transform", "translateY(9.25px) rotate(135deg)")
+        $(".stripe:nth-child(2)").css("transform", "translateX(-40px)")
+        $(".stripe:nth-child(3)").css("transform", "translateY(-9.25px) rotate(-135deg)")
+    } else {
+        $(".topnav").addClass("hidden")
+        $(".dark").addClass("hidden")
+        $(".stripe:nth-child(1)").css("transform", "none")
+        $(".stripe:nth-child(2)").css("transform", "none")
+        $(".stripe:nth-child(3)").css("transform", "none")
     }
 }

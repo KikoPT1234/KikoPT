@@ -6,28 +6,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Page = function (_React$Component) {
-    _inherits(Page, _React$Component);
+var API = function (_React$Component) {
+    _inherits(API, _React$Component);
 
-    function Page() {
-        _classCallCheck(this, Page);
+    function API() {
+        _classCallCheck(this, API);
 
-        return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (API.__proto__ || Object.getPrototypeOf(API)).apply(this, arguments));
     }
 
-    _createClass(Page, [{
+    _createClass(API, [{
         key: "render",
         value: function render() {
             return React.createElement(
-                "div",
-                { className: "root" },
-                React.createElement("div", { className: "hidden dark" }),
-                React.createElement(Header, { "class": this.props.class, title: this.props.title, subtitle: this.props.subtitle, buttons: this.props.buttons, selected: this.props.selected }),
-                React.createElement("div", { className: "separator" }),
-                React.createElement(Container, { value: this.props.value })
+                "main",
+                null,
+                React.createElement(
+                    "h2",
+                    null,
+                    "API."
+                )
             );
         }
     }]);
 
-    return Page;
+    return API;
 }(React.Component);
+
+// =============================
+
+var title = "Kiko";
+var subtitle = "Minehut - API Documentation";
+
+// =============================
+
+ReactDOM.render(React.createElement(Page, {
+    value: React.createElement(API, null),
+    title: title,
+    subtitle: subtitle,
+    selected: "Minehut",
+    buttons: "false"
+}), document.querySelector("body"));

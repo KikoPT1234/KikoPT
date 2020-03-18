@@ -18,9 +18,24 @@ var Topnav = function (_React$Component) {
     _createClass(Topnav, [{
         key: "render",
         value: function render() {
+            var nOfSlashes = -3;
+            var path = "";
+            for (var i = 0; i < window.location.href.length; i++) {
+                if (window.location.href.charAt(i) === "/") {
+                    nOfSlashes += 1;
+                    if (nOfSlashes > 0) path += "../";
+                }
+            }
             return React.createElement(
                 "div",
-                { id: this.props.selected, className: "topnav" },
+                { id: this.props.selected, className: "hidden topnav" },
+                React.createElement(
+                    "div",
+                    { className: "button" },
+                    React.createElement("div", { className: "stripe" }),
+                    React.createElement("div", { className: "stripe" }),
+                    React.createElement("div", { className: "stripe" })
+                ),
                 React.createElement(
                     "ul",
                     null,
@@ -29,7 +44,7 @@ var Topnav = function (_React$Component) {
                         null,
                         React.createElement(
                             "a",
-                            { href: "./home" },
+                            { href: path + "home" },
                             "Home"
                         )
                     ),
@@ -38,7 +53,7 @@ var Topnav = function (_React$Component) {
                         null,
                         React.createElement(
                             "a",
-                            { href: "./minehut" },
+                            { href: path + "minehut" },
                             "Minehut"
                         )
                     ),
@@ -47,7 +62,7 @@ var Topnav = function (_React$Component) {
                         null,
                         React.createElement(
                             "a",
-                            { href: "./other" },
+                            { href: path + "other" },
                             "Other Stuff"
                         )
                     )
@@ -71,6 +86,14 @@ var Banner = function (_React$Component2) {
     _createClass(Banner, [{
         key: "render",
         value: function render() {
+            var nOfSlashes = -3;
+            var path = "";
+            for (var i = 0; i < window.location.href.length; i++) {
+                if (window.location.href.charAt(i) === "/") {
+                    nOfSlashes += 1;
+                    if (nOfSlashes > 0) path += "../";
+                }
+            }
             var buttons = this.props.buttons === "true" ? React.createElement(
                 "div",
                 { className: "buttons" },
@@ -118,10 +141,10 @@ var Banner = function (_React$Component2) {
                 React.createElement(
                     "div",
                     { className: "images" },
-                    React.createElement("img", { src: "images/discord.png", className: "discord" }),
-                    React.createElement("img", { src: "images/minehut.png", className: "minehut" }),
-                    React.createElement("img", { src: "images/html5.png", className: "html5" }),
-                    React.createElement("img", { src: "images/nodejs.png", className: "nodejs" })
+                    React.createElement("img", { src: path + "images/discord.png", className: "discord" }),
+                    React.createElement("img", { src: path + "images/minehut.png", className: "minehut" }),
+                    React.createElement("img", { src: path + "images/html5.png", className: "html5" }),
+                    React.createElement("img", { src: path + "images/nodejs.png", className: "nodejs" })
                 )
             );
         }

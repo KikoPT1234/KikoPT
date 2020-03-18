@@ -24,7 +24,7 @@ var Minehut = function (_React$Component) {
                 React.createElement(
                     "h2",
                     null,
-                    "Welcome to the Minehut page. Here, you can find API docs, server stats, and server lookup."
+                    "Welcome to the Minehut page. You can check out the API docs, server stats, and server lookup."
                 ),
                 React.createElement(
                     "div",
@@ -34,7 +34,7 @@ var Minehut = function (_React$Component) {
                         { className: "cards" },
                         React.createElement(
                             "a",
-                            { href: "#", className: "card" },
+                            { href: "minehut/api", className: "card" },
                             React.createElement(
                                 "h1",
                                 null,
