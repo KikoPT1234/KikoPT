@@ -9,7 +9,7 @@ $(document).ready(() => {
         const search: any = $("#api-search").val()
         let number: number = 0
         $(".doc").each((i, doc: any) => {
-            let name = $(doc).attr("id").replace(/-[A-Z]+/g, "")
+            let name = $(doc).attr("id").replace(/-[A-Z]+/g, "").replace(/[{}]+/g, "")
             !name.includes("?") && !name.endsWith("/") ? name += "/" : null
             if (name.includes(search)) {
                 $(doc).show()
