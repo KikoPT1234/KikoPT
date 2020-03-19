@@ -24,8 +24,9 @@ var API = function (_React$Component) {
                 React.createElement(
                     "h2",
                     null,
-                    "API."
-                )
+                    "Welcome to the Minehut API Documentation. The Minehut API is what connects Minehut's front-end and back-end together, making it possible for a website or application to do things like start up a server, send commands, and change a file through HTTP requests."
+                ),
+                React.createElement("input", { type: "text", placeholder: "Search endpoints", id: "api-search" })
             );
         }
     }]);

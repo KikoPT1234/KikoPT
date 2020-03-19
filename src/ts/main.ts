@@ -42,7 +42,7 @@ function scrollFunction() {
     }
 }
 
-function topnavClick {
+function topnavClick() {
     if ($(".topnav").hasClass("hidden")) {
         $(".topnav").removeClass("hidden")
         $(".dark").removeClass("hidden")

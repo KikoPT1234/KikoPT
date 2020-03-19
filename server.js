@@ -23,6 +23,11 @@ app.get("/minehut/api", (req, res) => {
     res.sendFile(`${__dirname}/views/minehut/api.html`)
 })
 
+
+app.get("/minehut/api/json", (req, res) => {
+    res.status(200).json(require(`./docs.json`))
+})
+
 app.listen(process.env.PORT || 80)
 
 module.exports = app

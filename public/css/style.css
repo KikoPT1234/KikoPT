@@ -494,6 +494,69 @@ header .banner .images img.nodejs {
   z-index: 11;
 }
 
+input[type="text"] {
+  font-family: "Nunito", sans-serif;
+  padding: 12px;
+  background: linear-gradient(135deg, #444, #333, #444);
+  background-size: 200%;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  -webkit-transition: 250ms cubic-bezier(0, 0, 0, 1);
+  transition: 250ms cubic-bezier(0, 0, 0, 1);
+  outline: none;
+  height: 30px;
+  font-size: 1rem;
+  margin-top: 20px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"]:focus {
+  background-position: 100% 100%;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: gray;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: gray;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  color: gray;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+input[type="text"]::placeholder {
+  color: gray;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+input[type="text"]#api-search {
+  padding: 15px;
+  display: block;
+  width: calc(100% - 30px);
+}
+
+.code {
+  padding: 2px 4px;
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin: 0 2px;
+  font-family: monospace;
+}
+
 @-webkit-keyframes background-pos {
   from {
     background-position: 0% 0%;
