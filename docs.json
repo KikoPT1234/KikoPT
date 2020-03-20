@@ -1,7 +1,7 @@
 {
     "/servers-GET": {
         "description": [
-            "Returns a list of currently online player servers."
+            "Returns a list of currently online servers."
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/servers",
@@ -19,7 +19,7 @@
     },
     "/server/{server-name}?byName=true-GET": {
         "description": [
-            "Same as the previous, but uses the name instead of the ID."
+            "Returns basic information of a server using its name."
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/server/{server-name}?byName=true",
@@ -27,7 +27,7 @@
     },
     "/plugins_public-GET": {
         "description": [
-            "Returns all the available plugins for Minehut servers, along with their id, name, and description."
+            "Returns all the available plugins with their info."
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/plugins_public",
@@ -54,7 +54,7 @@
     },
     "/users/signup-POST": {
         "description": [
-            "Signup using an email and date of birth. Also sends a verification code to said email."
+            "Create an account using an email and date of birth. Also sends a verification code to said email."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/users/signup",
@@ -79,9 +79,18 @@
         "response": "{ \"user\":{  \"credits\":0,  \"_id\":\"5cb11bff5c3ebc1955c33852\",  \"email\":\"spongebob@squarep.ants\",  \"email_verified\":true,  \"email_sent_at\":1555110621197,  \"created_at\":1555110621060,  \"birthday\":\"1992-01-02T00:10:25.612Z\",  \"__v\":0,  \"email_code\":\"e3il0\",  \"last_password_change\":1555110670755,  \"token\":\"12c90781-738e-4c62-a53b-bc88b25f759b\",  \"last_login\":1555169889763,  \"servers\":[\"5cb11d898c3ebc1969c33858\"] }}",
         "authorization": true
     },
+    "/servers/{user-id}/all_data-GET": {
+        "description": [
+            "Returns all the servers belonging to the user."
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/servers/{user-id}/all_data",
+        "authorization": true
+        
+    },
     "/servers/create-POST": {
         "description": [
-            "Creates a new server on the specified account (maximum of 2)."
+            "Creates a new server on the specified account. If there's already 2 or more slots, 400 credits will be taken for a new one."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/servers/create",
@@ -114,7 +123,7 @@
     },
     "/server/{server-id}/start-POST": {
         "description": [
-            "Starts the server if it's not in hibernation."
+            "Starts the server only if it's not in hibernation."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/start",
@@ -122,7 +131,7 @@
     },
     "/server/{server-id}/shutdown-POST": {
         "description": [
-            "Stops the server, but does not put it in hibernation."
+            "Stops the server, but does not put it in hibernation (will still hibernate after five minutes)."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/shutdown",
@@ -138,7 +147,7 @@
     },
     "/server/{server-id}/repair_files-POST": {
         "description": [
-            "Attempts to repair the server files incase of an issue."
+            "Attempts to repair the server files incase there's an issue."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/repair_files",
@@ -163,7 +172,7 @@
     },
     "/server/{server-id}/change_name-POST": {
         "description": [
-            "Changes the servers name. Error 400 if name is already taken."
+            "Changes the server's name. Responds with status code 400 if the name is already taken."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/change_name",
@@ -172,7 +181,7 @@
     },
     "/server/{server-id}/change_motd-POST": {
         "description": [
-            "Changes the servers MOTD (message of the day)."
+            "Changes the server's MOTD (message of the day)."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/change_motd",
@@ -190,7 +199,7 @@
     },
     "/server/{server-id}/save-POST": {
         "description": [
-            "Saves the servers world."
+            "Saves the server's world."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/save",
@@ -198,7 +207,7 @@
     },
     "/server/{server-id}/reset_world-POST": {
         "description": [
-            "Resets the servers world with a new seed."
+            "Resets the server's world with a new seed."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/reset_world",
@@ -261,7 +270,7 @@
     },
     "/file/{server-id}/list-POST": {
         "description": [
-            "Returns all the files and folders in the servers root."
+            "Returns all the files and folders in the server's root directory."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/file/{server-id}/list",
@@ -270,7 +279,7 @@
     },
     "/file/{server-id}/list/{path}-POST": {
         "description": [
-            "Returns all the files and folders in the provided path."
+            "Returns all the files and folders in the provided file path."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/file/{server-id}/list/{path}",
@@ -288,8 +297,9 @@
     },
     "/file/{server-id}/edit/{file-path}-POST": {
         "description": [
-            "Edits a file and saves it with the provided content (~4GB max).",
-            "This also creates a file if one does not exist (provide a blank content for a blank file)"
+            "Edits a file and saves it with the provided content.",
+            "This also creates a file if one does not exist (provide a blank content for a blank file)",
+            "The maximum file upload size is approximately 4 gigabytes."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/file/{server-id}/edit/{file-path}",
@@ -353,14 +363,6 @@
         "endpoint": "https://api.minehut.com/network/stats/joins/week/java",
         "authorization": true
     },
-    "/network/stats/joins/week/bedrock-GET": {
-        "description": [
-            "Weekly bedrock joins"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/stats/joins/week/bedrock",
-        "authorization": true
-    },
     "/admin/stats/subscriptions/cancellations/week-GET": {
         "description": [
             "Weekly subscription cancellations"
@@ -417,14 +419,6 @@
         "endpoint": "https://api.minehut.com/network/stats/joins/month/java",
         "authorization": true
     },
-    "/network/stats/joins/month/bedrock-GET": {
-        "description": [
-            "Monthly bedrock joins"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/stats/joins/month/bedrock",
-        "authorization": true
-    },
     "/admin/stats/subscriptions/cancellations/month-GET": {
         "description": [
             "Monthly subscription cancellations"
@@ -457,84 +451,84 @@
         "endpoint": "https://api.minehut.com/website/navbar/promotion",
         "authorization": true
     },
-    "/user/name?byEmail=true-GET": {
+    "/user/{name}?byEmail=true-GET": {
         "description": [
             "Get user info from email"
         ],
         "method": "GET",
-        "endpoint": "https://api.minehut.com/user/name?byEmail=true",
+        "endpoint": "https://api.minehut.com/user/{name}?byEmail=true",
         "authorization": true
     },
-    "/user/name?byMinecraftName=true-GET": {
+    "/user/{name}?byMinecraftName=true-GET": {
         "description": [
             "Get user info from minehut name"
         ],
         "method": "GET",
-        "endpoint": "https://api.minehut.com/user/name?byMinecraftName=true",
+        "endpoint": "https://api.minehut.com/user/{name}?byMinecraftName=true",
         "authorization": true
     },
-    "/user/name/add_credits/amount-POST": {
+    "/user/{name}/add_credits/amount-POST": {
         "description": [
             "Add credits to user"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/user/name/add_credits/amount",
+        "endpoint": "https://api.minehut.com/user/{name}/add_credits/amount",
         "authorization": true
     },
-    "/user/name/delete_session-POST": {
+    "/user/{name}/delete_session-POST": {
         "description": [
             "Delete user session"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/user/name/delete_session",
+        "endpoint": "https://api.minehut.com/user/{name}/delete_session",
         "authorization": true
     },
-    "/admin/add/name-POST": {
+    "/admin/add/{name}-POST": {
         "description": [
             "Add new admin"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/add/name",
+        "endpoint": "https://api.minehut.com/admin/add/{name}",
         "authorization": true
     },
-    "/admin/gdpr/user-POST": {
+    "/admin/gdpr/{user}-POST": {
         "description": [
             "GDPR dump"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/gdpr/user",
+        "endpoint": "https://api.minehut.com/admin/gdpr/{user}",
         "authorization": true
     },
-    "/admin/delete/user-POST": {
+    "/admin/delete/{user}-POST": {
         "description": [
             "Delete account"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/delete/user",
+        "endpoint": "https://api.minehut.com/admin/delete/{user}",
         "authorization": true
     },
-    "/server/name/destroy_service_admin-POST": {
+    "/server/{name}/destroy_service_admin-POST": {
         "description": [
             "Destroy server service"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/server/name/destroy_service_admin",
+        "endpoint": "https://api.minehut.com/server/{name}/destroy_service_admin",
         "authorization": true
     },
-    "/admin/name/suspend-POST": {
+    "/admin/{name}/suspend-POST": {
         "description": [
             "Suspend server"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/name/suspend",
+        "endpoint": "https://api.minehut.com/admin/{name}/suspend",
         "authorization": true
     },
-    "/admin/name/release-POST": {
+    "/admin/{name}/release-POST": {
         "description": [
             "Release a server from suspension"
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/name/release",
+        "endpoint": "https://api.minehut.com/admin/{name}/release",
         "authorization": true
     },
     "/plugins-GET": {
