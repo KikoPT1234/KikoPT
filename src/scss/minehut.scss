@@ -23,6 +23,8 @@
                 font-size: 1.2rem;
                 position: relative;
                 line-height: 35px;
+                color: rgb(0, 170, 255);
+                text-decoration: none;
             }
             .method {
                 padding: 5px 20px;
@@ -68,6 +70,7 @@
 }
 
 .hljs {
+    word-wrap: normal !important;
     &, .hljs-subst {
         color: hsl(220, 14%, 71%) !important;
     }

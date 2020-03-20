@@ -29,6 +29,8 @@
   font-size: 1.2rem;
   position: relative;
   line-height: 35px;
+  color: #00aaff;
+  text-decoration: none;
 }
 
 .documentation .doc .header .method {
@@ -80,6 +82,7 @@
 }
 
 .hljs {
+  word-wrap: normal !important;
   background: #282c34 !important;
 }
 

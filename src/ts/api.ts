@@ -43,7 +43,7 @@ function docs(d: any) {
             `<div class="doc" id="${i}">
                 <div class="header">
                     <span class="method code">${doc.method}</span>
-                    <span class="name">${doc.endpoint.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}</span>
+                    <a class="name" href="${doc.endpoint.replace(/[{}]+/g, "")}">${doc.endpoint.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}</a>
                 </div>
                 <div class="main">
                     ${(function() {
