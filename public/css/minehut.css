@@ -11,17 +11,6 @@
   overflow-x: hidden;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
-  -webkit-transition: -webkit-transform 250ms cubic-bezier(0, 0, 0, 1), -webkit-box-shadow 250ms cubic-bezier(0, 0, 0, 1);
-  transition: -webkit-transform 250ms cubic-bezier(0, 0, 0, 1), -webkit-box-shadow 250ms cubic-bezier(0, 0, 0, 1);
-  transition: transform 250ms cubic-bezier(0, 0, 0, 1), box-shadow 250ms cubic-bezier(0, 0, 0, 1);
-  transition: transform 250ms cubic-bezier(0, 0, 0, 1), box-shadow 250ms cubic-bezier(0, 0, 0, 1), -webkit-transform 250ms cubic-bezier(0, 0, 0, 1), -webkit-box-shadow 250ms cubic-bezier(0, 0, 0, 1);
-}
-
-.documentation .doc:hover {
-  -webkit-transform: scale(1.025);
-          transform: scale(1.025);
-  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 13px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 13px rgba(0, 0, 0, 0.15);
 }
 
 .documentation .doc .header {
