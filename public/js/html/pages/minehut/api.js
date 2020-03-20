@@ -34,7 +34,7 @@ var API = function (_React$Component) {
                         React.createElement(
                             "span",
                             { style: { "opacity": ".2", "font-size": ".5rem" } },
-                            "Seriously, Delta is a god. What he isn't is helpful."
+                            "Seriously, Delta is a god. What he isn't is helpful, though."
                         )
                     )
                 ),
