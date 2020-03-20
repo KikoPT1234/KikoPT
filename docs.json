@@ -25,6 +25,14 @@
         "endpoint": "https://api.minehut.com/server/{server-name}?byName=true",
         "authorization": false
     },
+    "/servers/icons-GET": {
+        "description": [
+            "Returns the available server icons and their information"
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/servers/icons",
+        "authorization": false
+    },
     "/plugins_public-GET": {
         "description": [
             "Returns all the available plugins with their info."
@@ -442,6 +450,14 @@
         "method": "GET",
         "endpoint": "https://api.minehut.com/network/players/distribution",
         "authorization": true
+    },
+    "/website/navbar/promotion-GET": {
+        "description": [
+            "Get navbar promotion"
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/website/navbar/promotion",
+        "authorization": false
     },
     "/website/navbar/promotion-POST": {
         "description": [

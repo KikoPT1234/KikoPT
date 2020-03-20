@@ -47,7 +47,7 @@ function docs(d: any) {
                     ${(function() {
                         let main = ""
                         if (doc.request) main += `<div class="request info"><p>Request Body Example<p>${request.startsWith("{") ? `<pre class="atom-one-dark"><code class="atom-one-dark json">${request}</code></pre>` : request}</div>`
-                        if (doc.response) main += `<div class="response info"><p>Response Example<p>${response.startsWith("{") ? `<pre class="atom-one-dark"><code class="atom-one-dark json">${response}</code></pre>` : response}</div>`
+                        if (doc.response) main += `<div class="response info"><p>Response Body Example<p>${response.startsWith("{") ? `<pre class="atom-one-dark"><code class="atom-one-dark json">${response}</code></pre>` : response}</div>`
                         doc.description.forEach((desc: any) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`)
                         const headers = ["Content-Type"]
                         if (doc.authorization) headers.push("Authorization", "X-Session-Id")
