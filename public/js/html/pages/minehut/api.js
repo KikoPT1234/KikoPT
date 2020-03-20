@@ -29,7 +29,13 @@ var API = function (_React$Component) {
                     React.createElement(
                         "em",
                         null,
-                        "Special thanks to DeltaRays#0054. Documentation inspired by Vrganj."
+                        "Special thanks to DeltaRays#0054. Documentation inspired by Vrganj and, you guessed it, Delta.",
+                        React.createElement("br", null),
+                        React.createElement(
+                            "span",
+                            { style: { "opacity": ".2", "font-size": ".5rem" } },
+                            "Seriously, Delta is awesome, if you a chick, hit him up for a smash session :0"
+                        )
                     )
                 ),
                 React.createElement("input", { type: "text", placeholder: "Search endpoints", id: "api-search" })
