@@ -83,10 +83,16 @@
     .hljs-string {
         color: hsl( 95, 38%, 62%);
     }
-    .hljs-attr {
+    .hljs-attr, .hljs-params {
         color: hsl(355, 65%, 65%);
     }
     .hljs-literal, .hljs-number {
         color: hsl( 29, 54%, 61%);
+    }
+    .hljs-built_in {
+        color: hsl(39, 67%, 69%);
+    }
+    .hljs-function {
+        color: hsl(286, 60%, 67%);
     }
 }

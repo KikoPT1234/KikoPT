@@ -100,11 +100,19 @@
   color: #98c379;
 }
 
-.hljs .hljs-attr {
+.hljs .hljs-attr, .hljs .hljs-params {
   color: #e06c75;
 }
 
 .hljs .hljs-literal, .hljs .hljs-number {
   color: #d19a66;
+}
+
+.hljs .hljs-built_in {
+  color: #e5c07b;
+}
+
+.hljs .hljs-function {
+  color: #c678dd;
 }
 /*# sourceMappingURL=minehut.css.map */
