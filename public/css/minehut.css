@@ -23,14 +23,23 @@
   padding-bottom: 20px !important;
   background: #282828;
   text-align: left;
+  overflow-x: auto;
 }
 
 .documentation .doc .header .name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   position: relative;
   line-height: 35px;
-  color: #00aaff;
+  color: #878787;
   text-decoration: none;
+  word-break: break-all;
+}
+
+.documentation .doc .header .name .useful {
+  color: #00aaff;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 1.3rem;
 }
 
 .documentation .doc .header .method {
@@ -79,6 +88,7 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   padding: 100px 0;
+  text-align: center;
 }
 
 .hljs {

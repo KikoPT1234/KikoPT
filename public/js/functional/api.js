@@ -4,12 +4,11 @@ $(document).ready(() => {
     fetch(`${window.location.href}/json`)
         .then(r => r.json())
         .then(docs);
-    $($("#api-search")).keyup((e) => {
+    $("#api-search").keyup((e) => {
         const search = $("#api-search").val();
         let number = 0;
         $(".doc").each((i, doc) => {
             let name = $(doc).attr("id").replace(/-[A-Z]+/g, "").replace(/[{}]+/g, "");
-            !name.includes("?") && !name.endsWith("/") ? name += "/" : null;
             if (name.includes(search)) {
                 $(doc).show();
                 number++;
@@ -44,11 +43,10 @@ function docs(d) {
             console.log(e);
             response = doc.response;
         }
-        !doc.endpoint.includes("?") && !doc.endpoint.endsWith("/") ? doc.endpoint += "/" : null;
         let html = `<div class="doc" id="${i}">
                 <div class="header">
                     <span class="method code">${doc.method}</span>
-                    <a class="name" href="${doc.endpoint.replace(/[{}]+/g, "")}">${doc.endpoint.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}</a>
+                    <a class="name" href="${doc.endpoint.replace(/[{}]+/g, "")}">${doc.endpoint.replace("https://api.minehut.com", `https://api.minehut.com<span class="useful">`).replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`).concat("</span>")}</a>
                 </div>
                 <div class="main">
                     ${(function () {

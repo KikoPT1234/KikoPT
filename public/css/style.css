@@ -500,7 +500,7 @@ input[type="text"] {
   background: linear-gradient(135deg, #444, #333, #444);
   background-size: 200%;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   color: white;
   -webkit-transition: 250ms cubic-bezier(0, 0, 0, 1);
   transition: 250ms cubic-bezier(0, 0, 0, 1);
@@ -512,8 +512,12 @@ input[type="text"] {
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-input[type="text"]:focus {
+input[type="text"]:hover, input[type="text"]:focus {
   background-position: 100% 100%;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
 }
 
 input[type="text"]::-webkit-input-placeholder {
