@@ -5,7 +5,7 @@ $(document).ready(() => {
         .then(r => r.json())
         .then(docs);
     $("#api-search").keyup((e) => {
-        const search = $("#api-search").val();
+        const search = $("#api-search").val().toString().toLowerCase();
         let number = 0;
         $(".doc").each((i, doc) => {
             let name = $(doc).attr("id").replace(/-[A-Z]+/g, "").replace(/[{}]+/g, "");

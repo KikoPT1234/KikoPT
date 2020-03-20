@@ -6,7 +6,7 @@ $(document).ready(() => {
         .then(docs)
 
     $("#api-search").keyup((e) => {
-        const search: any = $("#api-search").val()
+        const search: string = $("#api-search").val().toString().toLowerCase()
         let number: number = 0
         $(".doc").each((i, doc: any) => {
             let name = $(doc).attr("id").replace(/-[A-Z]+/g, "").replace(/[{}]+/g, "")
