@@ -61,6 +61,10 @@
   margin-bottom: 10px;
 }
 
+.documentation .doc .main .info:first-child {
+  margin-top: 10px;
+}
+
 .documentation .doc .main code {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);

@@ -58,6 +58,7 @@ function docs(d) {
             const headers = ["Content-Type"];
             if (doc.authorization)
                 headers.push("Authorization", "X-Session-Id");
+            doc.description.forEach((desc) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`);
             if (doc.request)
                 main += `<div class="request info"><p>Request Body Example<p>${request.startsWith("{") ? `<pre><code class="json">${request}</code></pre>` : request}</div>`;
             if (doc.response)
@@ -75,7 +76,6 @@ function docs(d) {
     body: JSON.stringify(${doc.request})` : ""}\n})
 .then(response => response.json())
 .then(response => console.log(response))`;
-            doc.description.forEach((desc) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`);
             main += `<ul class="info headers"><p>Required Headers</p>`;
             headers.forEach(h => main += `<li class="code">${h}</li>`);
             main += `</ul>`;

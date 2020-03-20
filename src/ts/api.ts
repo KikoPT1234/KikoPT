@@ -52,6 +52,7 @@ function docs(d: any) {
                         let main = ""
                         const headers = ["Content-Type"]
                         if (doc.authorization) headers.push("Authorization", "X-Session-Id")
+                        doc.description.forEach((desc: any) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`)
                         if (doc.request) main += `<div class="request info"><p>Request Body Example<p>${request.startsWith("{") ? `<pre><code class="json">${request}</code></pre>` : request}</div>`
                         if (doc.response) main += `<div class="response info"><p>Response Body Example<p>${response.startsWith("{") ? `<pre><code class="json">${response}</code></pre>` : response}</div>`
                         
@@ -65,8 +66,7 @@ function docs(d: any) {
     body: JSON.stringify(${doc.request})` : ""}\n})
 .then(response => response.json())
 .then(response => console.log(response))`
-                        
-                        doc.description.forEach((desc: any) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`)
+
                         main += `<ul class="info headers"><p>Required Headers</p>`
                         headers.forEach(h => main += `<li class="code">${h}</li>`)
                         main += `</ul>`
