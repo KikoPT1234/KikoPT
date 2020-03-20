@@ -508,7 +508,7 @@ input[type="text"] {
   background: linear-gradient(135deg, #444, #333, #444);
   background-size: 200%;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   color: white;
   -webkit-transition: 250ms cubic-bezier(0, 0, 0, 1);
   transition: 250ms cubic-bezier(0, 0, 0, 1);

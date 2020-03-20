@@ -1,5 +1,9 @@
 let documentation;
 $(document).ready(() => {
+    // @ts-ignore
+    hljs.configure({
+        tabReplace: "  "
+    });
     $("main").append(`<div class=documentation></div>`);
     fetch(`${window.location.href}/json`)
         .then(r => r.json())
@@ -51,22 +55,38 @@ function docs(d) {
                 <div class="main">
                     ${(function () {
             let main = "";
-            if (doc.request)
-                main += `<div class="request info"><p>Request Body Example<p>${request.startsWith("{") ? `<pre class="atom-one-dark"><code class="atom-one-dark json">${request}</code></pre>` : request}</div>`;
-            if (doc.response)
-                main += `<div class="response info"><p>Response Body Example<p>${response.startsWith("{") ? `<pre class="atom-one-dark"><code class="atom-one-dark json">${response}</code></pre>` : response}</div>`;
-            doc.description.forEach((desc) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`);
             const headers = ["Content-Type"];
             if (doc.authorization)
                 headers.push("Authorization", "X-Session-Id");
+            if (doc.request)
+                main += `<div class="request info"><p>Request Body Example<p>${request.startsWith("{") ? `<pre><code class="json">${request}</code></pre>` : request}</div>`;
+            if (doc.response)
+                main += `<div class="response info"><p>Response Body Example<p>${response.startsWith("{") ? `<pre><code class="json">${response}</code></pre>` : response}</div>`;
+            let example = `fetch("${doc.endpoint.replace(/{.+}/g, "5d0fae466242a640a28e3506")}", {
+    method: "${doc.method}",
+    headers: {\n${headers.map(header => {
+                if (header === "Content-Type")
+                    return `        "${header}": "application/json"`;
+                else if (header === "Authorization")
+                    return `\n        "${header}": "5af836a8-60f8-4df3-91fa-040618671818"`;
+                else if (header === "X-Session-Id")
+                    return `\n        "${header}": "dd665cd1-a0b5-4e2e-bef8-6706a413a83c"`;
+            })}\n    }${doc.request ? `,
+    body: JSON.stringify(${doc.request})` : ""}\n})
+.then(response => response.json())
+.then(response => console.log(response))`;
+            doc.description.forEach((desc) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`);
             main += `<ul class="info headers"><p>Required Headers</p>`;
             headers.forEach(h => main += `<li class="code">${h}</li>`);
             main += `</ul>`;
+            main += `<div class="example info"><p>JavaScript Example Code</p><pre><code class="javascript">${example}</code></pre></div>`;
             return main;
         })()}
                 </div>
             </div>`;
         $(".documentation").append(html);
+        // @ts-ignore
+        hljs.highlightBlock(document.getElementById(i).querySelector(".example pre code"));
         // @ts-ignore
         if (doc.request && doc.request.startsWith("{"))
             hljs.highlightBlock(document.getElementById(i).querySelector(".request pre code"));
