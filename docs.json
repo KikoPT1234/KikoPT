@@ -193,7 +193,7 @@
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/change_motd",
-        "request": "{\"command\":\"&6Ooo,&athisisnice!\"}",
+        "request": "{\"motd\":\"&6Ooo\\n&athisisnice!\"}",
         "authorization": true
     },
     "server/{server-id}/visibility-POST": {
