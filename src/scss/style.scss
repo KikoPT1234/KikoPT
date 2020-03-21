@@ -481,9 +481,12 @@ input[type="text"] {
         font-family: "Nunito", sans-serif;
     }
     &#api-search {
+        position: sticky;
         padding: 15px;
         display: block;
         width: calc(100% - 30px);
+        top: 60px;
+        z-index: 9;
     }
 }
 

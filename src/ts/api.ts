@@ -8,7 +8,6 @@ $(document).ready(() => {
     fetch(`${window.location.href}/json`)
         .then(r => r.json())
         .then(docs)
-
     $("#api-search").keyup((e) => {
         const search: string = $("#api-search").val().toString().toLowerCase()
         let number: number = 0
@@ -33,6 +32,7 @@ function docs(d: any) {
         try {
             if (doc.request) request = JSON.stringify(JSON.parse(doc.request), null, "  ").replace(/\n+/g, "<br>").replace(/\s/gi, "&nbsp;");
         } catch(e) {
+            console.log(e)
             request = doc.request
         }
         try {
@@ -53,8 +53,8 @@ function docs(d: any) {
                         const headers = ["Content-Type"]
                         if (doc.authorization) headers.push("Authorization", "X-Session-Id")
                         doc.description.forEach((desc: any) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`)
-                        if (doc.request) main += `<div class="request info"><p>Request Body Example<p>${request.startsWith("{") ? `<pre><code class="json">${request}</code></pre>` : request}</div>`
-                        if (doc.response) main += `<div class="response info"><p>Response Body Example<p>${response.startsWith("{") ? `<pre><code class="json">${response}</code></pre>` : response}</div>`
+                        if (doc.request) main += `<div class="request info"><p>Request Body Example</p>${(request.startsWith("{") || response.startsWith("[")) ? `<pre><code class="json">${request}</code></pre>` : request}</div>`
+                        if (doc.response) main += `<div class="response info"><p>Response Body Example</p>${(response.startsWith("{") || response.startsWith("[")) ? `<pre><code class="json">${response}</code></pre>` : response}</div>`
                         
                         let example = `fetch("${doc.endpoint.replace(/{.+}/g, "5d0fae466242a640a28e3506")}", {
     method: "${doc.method}",
@@ -63,7 +63,7 @@ function docs(d: any) {
                             else if (header === "Authorization") return `\n        "${header}": "5af836a8-60f8-4df3-91fa-040618671818"`
                             else if (header === "X-Session-Id") return `\n        "${header}": "dd665cd1-a0b5-4e2e-bef8-6706a413a83c"`
                         })}\n    }${doc.request ? `,
-    body: JSON.stringify(${doc.request})` : ""}\n})
+    body: ${doc.request.startsWith("{") || doc.request.startsWith("[") ? `JSON.stringify(${doc.request})` : "\"REQUEST HERE\""}` : ""}\n})
 .then(response => response.json())
 .then(response => console.log(response))`
 
@@ -79,9 +79,9 @@ function docs(d: any) {
         // @ts-ignore
         hljs.highlightBlock(document.getElementById(i).querySelector(".example pre code"))
         // @ts-ignore
-        if (doc.request && doc.request.startsWith("{")) hljs.highlightBlock(document.getElementById(i).querySelector(".request pre code"))
+        if (doc.request && (doc.request.startsWith("{") || doc.request.startsWith("["))) hljs.highlightBlock(document.getElementById(i).querySelector(".request pre code"))
         // @ts-ignore
-        if (doc.response && doc.response.startsWith("{")) hljs.highlightBlock(document.getElementById(i).querySelector(".response pre code"))
+        if (doc.response && (doc.response.startsWith("{") || doc.response.startsWith("["))) hljs.highlightBlock(document.getElementById(i).querySelector(".response pre code"))
     }
     $(".documentation").append(`<h1 style="display: none" id="not-found">No endpoints found :/</h1>`)
 }

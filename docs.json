@@ -93,6 +93,7 @@
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/servers/{user-id}/all_data",
+        "response": "[{\"_id\":\"5ab92d51514ae22fbd45af97\",\"owner\":\"5ab92d14f528e45f8860da98\",\"name\":\"hElLo\",\"name_lower\":\"hello\",\"creation\":1522085201482,\"platform\":\"java\",\"__v\":0,\"port\":-1,\"motd\":\"The hello server :D\",\"key\":\"de87793tcebebd4d8a8c445d515c5c4e117019d0\",\"last_online\":1583016769717,\"credits_per_day\":0,\"storage_node\":\"s1\",\"visibility\":true,\"server_properties\":{\"view_distance\":8,\"resource_pack_sha1\":\"\",\"resource_pack\":\"\",\"generator_settings\":\"\",\"level_name\":\"world\",\"allow_nether\":true,\"level_seed\":\"\",\"pvp\":true,\"hardcore\":false,\"force_gamemode\":false,\"spawn_mobs\":true,\"spawn_animals\":true,\"allow_flight\":false,\"max_players\":10,\"level_type\":\"FLAT\",\"spawn_protection\":0,\"gamemode\":0,\"difficulty\":0,\"enable_command_block\":true,\"announce_player_achievements\":true,\"generate_structures\":false},\"suspended\":false,\"purchased_icons\":[],\"active_plugins\":[],\"purchased_plugins\":[],\"max_ram\":1024,\"online\":false,\"service_online\":false,\"player_count\":0,\"max_players\":0,\"server_ip\":\"\",\"server_port\":0,\"time_no_players\":0,\"players\":[],\"started_at\":0,\"stopped_at\":0,\"starting\":false,\"stopping\":false,\"exited\":false,\"status\":\"SERVICE_OFFLINE\",\"metrics\":{},\"transfer_scheduled\":false},{\"_id\":\"5aba0d11514ae22fbd45b03e\",\"owner\":\"5ab92d14f528e62f8860da98\",\"name\":\"SpaceScape\",\"name_lower\":\"spacescape\",\"creation\":1522142481893,\"platform\":\"java\",\"__v\":1,\"port\":-1,\"motd\":\"&1&lSpaceScape &9&lBeta\\n&b&lNew Prison!\",\"credits_per_day\":0,\"storage_node\":\"s1\",\"visibility\":true,\"key\":\"8757c17b28c58b581d5b66882c8701fcbf573abd\",\"last_online\":1582996365307,\"offer\":\"2gb20slots\",\"server_properties\":{\"spawn_protection\":16,\"gamemode\":2,\"force_gamemode\":false,\"pvp\":true,\"spawn_mobs\":false,\"spawn_animals\":false,\"allow_flight\":false,\"difficulty\":2,\"hardcore\":false,\"enable_command_block\":true,\"announce_player_achievements\":false,\"allow_nether\":true,\"generate_structures\":false,\"level_type\":\"FLAT\",\"generator_settings\":\"2;0;1;\",\"level_name\":\"space\",\"level_seed\":\"\",\"max_players\":10,\"resource_pack\":\"\",\"resource_pack_sha1\":\"\",\"view_distance\":8},\"suspended\":false,\"purchased_icons\":[],\"active_plugins\":[],\"purchased_plugins\":[],\"max_ram\":1024,\"online\":false,\"service_online\":false,\"player_count\":0,\"max_players\":0,\"server_ip\":\"\",\"server_port\":0,\"time_no_players\":0,\"players\":[],\"started_at\":0,\"stopped_at\":0,\"starting\":false,\"stopping\":false,\"exited\":false,\"status\":\"SERVICE_OFFLINE\",\"metrics\":{},\"transfer_scheduled\":false}]",
         "authorization": true
         
     },
@@ -276,29 +277,29 @@
         "request": "{\"plugin\":\"5a42ba4846246d33fa64c625\"}",
         "authorization": true
     },
-    "/file/{server-id}/list-POST": {
+    "/file/{server-id}/list-GET": {
         "description": [
             "Returns all the files and folders in the server's root directory."
         ],
-        "method": "POST",
+        "method": "GET",
         "endpoint": "https://api.minehut.com/file/{server-id}/list",
         "response": "{ \"files\":[{  \"name\":\"banned-ips.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"banned-players.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"bukkit.yml\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"commands.yml\",  \"directory\":false,  \"blocked\":false }, {  \"name\":\"whitelist.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"world\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_nether\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_the_end\",  \"directory\":true,  \"blocked\":true }]}",
         "authorization": true
     },
-    "/file/{server-id}/list/{path}-POST": {
+    "/file/{server-id}/list/{path}-GET": {
         "description": [
             "Returns all the files and folders in the provided file path."
         ],
-        "method": "POST",
+        "method": "GET",
         "endpoint": "https://api.minehut.com/file/{server-id}/list/{path}",
         "response": "{ \"files\":[{  \"name\":\"banned-ips.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"banned-players.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"bukkit.yml\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"commands.yml\",  \"directory\":false,  \"blocked\":false }, {  \"name\":\"whitelist.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"world\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_nether\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_the_end\",  \"directory\":true,  \"blocked\":true }]}",
         "authorization": true
     },
-    "/file/{server-id}/read/{file-path}-POST": {
+    "/file/{server-id}/read/{file-path}-GET": {
         "description": [
             "Returns all the contents of a file."
         ],
-        "method": "POST",
+        "method": "GET",
         "endpoint": "https://api.minehut.com/file/{server-id}/read/{file-path}",
         "response": "{ \"content\":\"Thecontentsofthefilewillbeinhere\"}",
         "authorization": true
@@ -457,7 +458,8 @@
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/website/navbar/promotion",
-        "authorization": false
+        "response": "{\"text\":\"Vote every day for 25 free credits! �🏧\",\"link\":\"http://bit.ly/vote4mh\"}",
+        "authorization": true
     },
     "/website/navbar/promotion-POST": {
         "description": [

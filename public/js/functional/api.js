@@ -37,6 +37,7 @@ function docs(d) {
                 request = JSON.stringify(JSON.parse(doc.request), null, "  ").replace(/\n+/g, "<br>").replace(/\s/gi, "&nbsp;");
         }
         catch (e) {
+            console.log(e);
             request = doc.request;
         }
         try {
@@ -60,9 +61,9 @@ function docs(d) {
                 headers.push("Authorization", "X-Session-Id");
             doc.description.forEach((desc) => main += `<div class="info description">${desc.replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`)}${desc.endsWith(".") ? "" : "."}</div>`);
             if (doc.request)
-                main += `<div class="request info"><p>Request Body Example<p>${request.startsWith("{") ? `<pre><code class="json">${request}</code></pre>` : request}</div>`;
+                main += `<div class="request info"><p>Request Body Example</p>${(request.startsWith("{") || response.startsWith("[")) ? `<pre><code class="json">${request}</code></pre>` : request}</div>`;
             if (doc.response)
-                main += `<div class="response info"><p>Response Body Example<p>${response.startsWith("{") ? `<pre><code class="json">${response}</code></pre>` : response}</div>`;
+                main += `<div class="response info"><p>Response Body Example</p>${(response.startsWith("{") || response.startsWith("[")) ? `<pre><code class="json">${response}</code></pre>` : response}</div>`;
             let example = `fetch("${doc.endpoint.replace(/{.+}/g, "5d0fae466242a640a28e3506")}", {
     method: "${doc.method}",
     headers: {\n${headers.map(header => {
@@ -73,7 +74,7 @@ function docs(d) {
                 else if (header === "X-Session-Id")
                     return `\n        "${header}": "dd665cd1-a0b5-4e2e-bef8-6706a413a83c"`;
             })}\n    }${doc.request ? `,
-    body: JSON.stringify(${doc.request})` : ""}\n})
+    body: ${doc.request.startsWith("{") || doc.request.startsWith("[") ? `JSON.stringify(${doc.request})` : "\"REQUEST HERE\""}` : ""}\n})
 .then(response => response.json())
 .then(response => console.log(response))`;
             main += `<ul class="info headers"><p>Required Headers</p>`;
@@ -88,10 +89,10 @@ function docs(d) {
         // @ts-ignore
         hljs.highlightBlock(document.getElementById(i).querySelector(".example pre code"));
         // @ts-ignore
-        if (doc.request && doc.request.startsWith("{"))
+        if (doc.request && (doc.request.startsWith("{") || doc.request.startsWith("[")))
             hljs.highlightBlock(document.getElementById(i).querySelector(".request pre code"));
         // @ts-ignore
-        if (doc.response && doc.response.startsWith("{"))
+        if (doc.response && (doc.response.startsWith("{") || doc.response.startsWith("[")))
             hljs.highlightBlock(document.getElementById(i).querySelector(".response pre code"));
     }
     $(".documentation").append(`<h1 style="display: none" id="not-found">No endpoints found :/</h1>`);

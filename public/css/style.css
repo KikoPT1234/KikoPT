@@ -552,9 +552,13 @@ input[type="text"]::placeholder {
 }
 
 input[type="text"]#api-search {
+  position: -webkit-sticky;
+  position: sticky;
   padding: 15px;
   display: block;
   width: calc(100% - 30px);
+  top: 60px;
+  z-index: 9;
 }
 
 .code {
