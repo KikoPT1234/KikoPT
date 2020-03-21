@@ -9,18 +9,18 @@ app.use(forceSecure([
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.sendFile(`${__dirname}/views/home.html`)
+    res.status(200).sendFile(`${__dirname}/views/home.html`)
 })
 app.get("/home", (req, res) => {
-    res.sendFile(`${__dirname}/views/home.html`)
+    res.status(200).sendFile(`${__dirname}/views/home.html`)
 })
 
 app.get("/minehut", (req, res) => {
-    res.sendFile(`${__dirname}/views/minehut.html`)
+    res.status(200).sendFile(`${__dirname}/views/minehut.html`)
 })
 
 app.get("/minehut/api", (req, res) => {
-    res.sendFile(`${__dirname}/views/minehut/api.html`)
+    res.status(200).sendFile(`${__dirname}/views/minehut/api.html`)
 })
 
 

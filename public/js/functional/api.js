@@ -5,14 +5,14 @@ $(document).ready(() => {
         tabReplace: "  "
     });
     $("main").append(`<div class=documentation></div>`);
-    fetch(`${window.location.href}/json`)
+    fetch(`${window.location.href.split("#")[0]}/json`)
         .then(r => r.json())
         .then(docs);
     $("#api-search").keyup((e) => {
         const search = $("#api-search").val().toString().toLowerCase();
         let number = 0;
         $(".doc").each((i, doc) => {
-            let name = $(doc).attr("id").replace(/-[A-Z]+/g, "").replace(/[{}]+/g, "");
+            let name = "/" + $(doc).attr("id").replace(/-[A-Z]+/g, "").replace(/[{}]+/g, "");
             if (name.includes(search)) {
                 $(doc).show();
                 number++;
@@ -96,4 +96,12 @@ function docs(d) {
             hljs.highlightBlock(document.getElementById(i).querySelector(".response pre code"));
     }
     $(".documentation").append(`<h1 style="display: none" id="not-found">No endpoints found :/</h1>`);
+    if (window.location.href.includes("#")) {
+        const id = window.location.href.split("#")[1];
+        let el = document.getElementById(id);
+        if (el) {
+            el = el.getBoundingClientRect();
+            window.scrollTo(0, el.top + $(window).scrollTop() - 130);
+        }
+    }
 }
