@@ -37,6 +37,35 @@
                 margin-right: 5px;
                 font-size: 1.3rem;
             }
+            .copy-buttons {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 10px;
+                grid-auto-rows: minmax(50px, max-content);
+                button {
+                    //display: block;
+                    padding: 5px 15px;
+                    min-height: 30px;
+                    border-radius: 4px;
+                    border: none;
+                    background: linear-gradient(-45deg, #0088FF, #004CFF, #0088FF);
+                    background-size: 200%;
+                    transition: 250ms cubic-bezier(0, 0, 0, 1);
+                    font-family: "Nunito", sans-serif;
+                    color: white;
+                    cursor: pointer;
+                    box-shadow: 
+                        0 10px 20px rgba(0, 0, 0, .1),
+                        0 4px 6px rgba(0, 0, 0, .15);
+                    outline: none;
+                    &:hover {
+                        transform: scale(1.05);
+                        filter: brightness(1.5);
+                        background-position: 100%;
+                    }
+                }
+            }
         }
         .header, .main > * {
             padding: 5px 20px;

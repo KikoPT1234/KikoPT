@@ -52,6 +52,10 @@ function docs(d) {
                 <div class="header">
                     <span class="method code">${doc.method}</span>
                     <a class="name" href="${doc.endpoint.replace(/[{}]+/g, "")}">${doc.endpoint.replace("https://api.minehut.com", `https://api.minehut.com<span class="useful">`).replace(/{/g, `<span class="code">`).replace(/}/g, `</span>`).concat("</span>")}</a>
+                    <div class="copy-buttons">
+                        <button class="copy">Copy Link</button>
+                        <button class="copy-doc">Copy Documentation Link</button>
+                    </div>
                 </div>
                 <div class="main">
                     ${(function () {
@@ -104,4 +108,12 @@ function docs(d) {
             window.scrollTo(0, el.top + $(window).scrollTop() - 130);
         }
     }
+    $(".copy").click(function () {
+        const name = $(this).parent().children(".name").text();
+        navigator.clipboard.writeText(name);
+    });
+    $(".copy-doc").click(function () {
+        const name = window.location.href.split("#")[0] + "#" + $(this).parent().parent().parent().attr("id");
+        navigator.clipboard.writeText(name);
+    });
 }

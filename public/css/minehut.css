@@ -45,6 +45,42 @@
   font-size: 1.3rem;
 }
 
+.documentation .doc .header .copy-buttons {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  grid-auto-rows: minmax(50px, -webkit-max-content);
+  grid-auto-rows: minmax(50px, max-content);
+}
+
+.documentation .doc .header .copy-buttons button {
+  padding: 5px 15px;
+  min-height: 30px;
+  border-radius: 4px;
+  border: none;
+  background: linear-gradient(-45deg, #0088FF, #004CFF, #0088FF);
+  background-size: 200%;
+  -webkit-transition: 250ms cubic-bezier(0, 0, 0, 1);
+  transition: 250ms cubic-bezier(0, 0, 0, 1);
+  font-family: "Nunito", sans-serif;
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.documentation .doc .header .copy-buttons button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+  background-position: 100%;
+}
+
 .documentation .doc .header, .documentation .doc .main > * {
   padding: 5px 20px;
 }
