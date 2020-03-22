@@ -26,7 +26,8 @@
     "braces": "^3.0.2",
     "express": "^4.17.1",
     "force-secure-express": "^1.0.1",
-    "heroku": "^7.39.0"
+    "heroku": "^7.39.0",
+    "minimist": "^1.2.5"
   },
   "devDependencies": {
     "@types/jquery": "^3.3.33",
