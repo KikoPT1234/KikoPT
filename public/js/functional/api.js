@@ -109,7 +109,8 @@ function docs(d) {
         }
     }
     $(".copy").click(function () {
-        const name = $(this).parent().children(".name").text();
+        const name = $(this).parent().siblings(".name").text();
+        console.log(name);
         navigator.clipboard.writeText(name);
     });
     $(".copy-doc").click(function () {
