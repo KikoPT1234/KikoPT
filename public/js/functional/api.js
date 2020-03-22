@@ -97,7 +97,7 @@ function docs(d) {
     }
     $(".documentation").append(`<h1 style="display: none" id="not-found">No endpoints found :/</h1>`);
     if (window.location.href.includes("#")) {
-        const id = window.location.href.split("#")[1];
+        const id = window.location.href.replace(/%7B+/g, "{").replace(/%7D+/g, "}").split("#")[1];
         let el = document.getElementById(id);
         if (el) {
             el = el.getBoundingClientRect();
