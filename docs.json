@@ -450,7 +450,7 @@
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/network/players/distribution",
-        "authorization": true
+        "authorization": false
     },
     "website/navbar/promotion-GET": {
         "description": [
