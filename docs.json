@@ -49,7 +49,7 @@
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/purchase",
-        "request": "{\"icon-id\":\"5e74719738451e006888cb08\"}"
+        "request": "{\"icon-id\":\"5e74719738451e006888cb08\"}",
         "authorization": true
     },
     "plugins_public-GET": {
