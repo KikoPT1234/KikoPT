@@ -43,13 +43,22 @@
         "response": "[{\"_id\":\"5e74715ead31770058c5f29e\",\"display_name\":\"Golden Pickaxe\",\"icon_name\":\"GOLDEN_PICKAXE\",\"price\":1700,\"rank\":\"EPIC\",\"available\":true,\"disabled\":false,\"__v\":0,\"created\":1584689502429,\"last_updated\":1584689650210},{\"_id\":\"5e7471730275560052b2ea00\",\"display_name\":\"Grass Block\",\"icon_name\":\"GRASS_BLOCK\",\"price\":1200,\"rank\":\"RARE\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689523612,\"last_updated\":1584690201507},{\"_id\":\"5e7471850275560052b2ea01\",\"display_name\":\"Diamond Sword\",\"icon_name\":\"DIAMOND_SWORD\",\"price\":2500,\"rank\":\"LEGENDARY\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689541533,\"last_updated\":1584690217437},{\"_id\":\"5e74719738451e006888cb08\",\"display_name\":\"Cake\",\"icon_name\":\"CAKE\",\"price\":500,\"rank\":\"COMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689559684,\"last_updated\":1584690229264},{\"_id\":\"5e7471aa0c53f7005f9b783b\",\"display_name\":\"Lava Bucket\",\"icon_name\":\"LAVA_BUCKET\",\"price\":900,\"rank\":\"UNCOMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689578923,\"last_updated\":1584690244771}]",
         "authorization": false
     },
-    "server/{server-id}/icons/purchase-GET": {
+    "server/{server-id}/icon/purchase-POST": {
         "description": [
             "Purchases an icon."
         ],
         "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/purchase",
-        "request": "{\"icon-id\":\"5e74719738451e006888cb08\"}",
+        "endpoint": "https://api.minehut.com/server/{server-id}/icon/purchase",
+        "request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
+        "authorization": true
+    },
+    "server/{server-id}/icons/equip-POST": {
+        "description": [
+            "Changes a server's icon."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/server/{server-id}/icon/equip",
+        "request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
         "authorization": true
     },
     "plugins_public-GET": {
