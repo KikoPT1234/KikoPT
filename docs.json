@@ -267,6 +267,15 @@
         "request": "{\"field\":\"Seebelowforpossiblevalues\",\"value\":\"Avaluepertainingtothefield\"}",
         "authorization": true
     },
+    "file/upload/{server-id}/{file-path}-POST": {
+        "description": [
+            "Uploads a file."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/file/upload/{server-id}/{file-path}",
+        "request": "File(binary)",
+        "authorization": true
+    },
     "file/world/upload/{server-id}-POST": {
         "description": [
             "Uploads a .zip world."
