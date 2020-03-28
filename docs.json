@@ -156,6 +156,14 @@
         "endpoint": "https://api.minehut.com/server/{server-id}/start",
         "authorization": true
     },
+    "server/{server-id}/restart-POST": {
+        "description": [
+            "Restarts the server."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/server/{server-id}/restart",
+        "authorization": true
+    },
     "server/{server-id}/shutdown-POST": {
         "description": [
             "Stops the server, but does not put it in hibernation (will still hibernate after five minutes)."
