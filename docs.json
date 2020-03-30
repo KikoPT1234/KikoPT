@@ -471,7 +471,7 @@
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/network/simple_stats",
-        "response": "{\"player_count\":14348,\"server_count\":9042,\"server_max\":13000,\"ram_count\":9476302,\"ram_max\":36000}"
+        "response": "{\"player_count\":14348,\"server_count\":9042,\"server_max\":13000,\"ram_count\":9476302,\"ram_max\":36000}",
         "authorization": false
     },
     "network/homepage_stats-GET": {
@@ -480,7 +480,7 @@
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/network/homepage_stats",
-        "response": "{\"server_count\":1543581,\"user_count\":1205537}"
+        "response": "{\"server_count\":1543581,\"user_count\":1205537}",
         "authorization": false
     },
     "network/stats/joins/month-GET": {
