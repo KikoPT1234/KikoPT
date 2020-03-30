@@ -97,9 +97,18 @@
         "request": "{\"email\":\"spongebob@squarep.ants\",\"birthday\":\"1986-01-02T00:05:40.082Z\"}",
         "authorization": false
     },
+    "users/check_email_code-POST": {
+        "description": [
+            "Checks email code."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/users/check_email_code",
+        "request": "{\"email_code\":\"P1N34PPL3\"}",
+        "authorization": false
+    },
     "users/confirm_email-POST": {
         "description": [
-            "Verifies email code."
+            "Verifies email code and sets password."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/users/confirm_email",
@@ -455,6 +464,24 @@
         "method": "GET",
         "endpoint": "https://api.minehut.com/admin/stats/subscriptions/new/month",
         "authorization": true
+    },
+    "network/simple_stats-GET": {
+        "description": [
+            "Returns some stats about the network."
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/network/simple_stats",
+        "response": "{\"player_count\":14348,\"server_count\":9042,\"server_max\":13000,\"ram_count\":9476302,\"ram_max\":36000}"
+        "authorization": false
+    },
+    "network/homepage_stats-GET": {
+        "description": [
+            "Returns some stats for the homepage."
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/network/homepage_stats",
+        "response": "{\"server_count\":1543581,\"user_count\":1205537}"
+        "authorization": false
     },
     "network/stats/joins/month-GET": {
         "description": [
