@@ -27,12 +27,39 @@
     },
     "servers/icons-GET": {
         "description": [
-            "Returns the available server icons and their information"
+            "Returns all the server icons and their information"
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/servers/icons",
         "response": "[{\"_id\":\"5e74715ead31770058c5f29e\",\"display_name\":\"Golden Pickaxe\",\"icon_name\":\"GOLDEN_PICKAXE\",\"price\":1700,\"rank\":\"EPIC\",\"available\":true,\"disabled\":false,\"__v\":0,\"created\":1584689502429,\"last_updated\":1584689650210},{\"_id\":\"5e7471730275560052b2ea00\",\"display_name\":\"Grass Block\",\"icon_name\":\"GRASS_BLOCK\",\"price\":1200,\"rank\":\"RARE\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689523612,\"last_updated\":1584690201507},{\"_id\":\"5e7471850275560052b2ea01\",\"display_name\":\"Diamond Sword\",\"icon_name\":\"DIAMOND_SWORD\",\"price\":2500,\"rank\":\"LEGENDARY\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689541533,\"last_updated\":1584690217437},{\"_id\":\"5e74719738451e006888cb08\",\"display_name\":\"Cake\",\"icon_name\":\"CAKE\",\"price\":500,\"rank\":\"COMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689559684,\"last_updated\":1584690229264},{\"_id\":\"5e7471aa0c53f7005f9b783b\",\"display_name\":\"Lava Bucket\",\"icon_name\":\"LAVA_BUCKET\",\"price\":900,\"rank\":\"UNCOMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689578923,\"last_updated\":1584690244771}]",
         "authorization": false
+    },
+    "servers/available_icons-GET": {
+        "description": [
+            "Returns the available server icons and their information"
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/servers/available_icons",
+        "response": "[{\"_id\":\"5e74715ead31770058c5f29e\",\"display_name\":\"Golden Pickaxe\",\"icon_name\":\"GOLDEN_PICKAXE\",\"price\":1700,\"rank\":\"EPIC\",\"available\":true,\"disabled\":false,\"__v\":0,\"created\":1584689502429,\"last_updated\":1584689650210},{\"_id\":\"5e7471730275560052b2ea00\",\"display_name\":\"Grass Block\",\"icon_name\":\"GRASS_BLOCK\",\"price\":1200,\"rank\":\"RARE\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689523612,\"last_updated\":1584690201507},{\"_id\":\"5e7471850275560052b2ea01\",\"display_name\":\"Diamond Sword\",\"icon_name\":\"DIAMOND_SWORD\",\"price\":2500,\"rank\":\"LEGENDARY\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689541533,\"last_updated\":1584690217437},{\"_id\":\"5e74719738451e006888cb08\",\"display_name\":\"Cake\",\"icon_name\":\"CAKE\",\"price\":500,\"rank\":\"COMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689559684,\"last_updated\":1584690229264},{\"_id\":\"5e7471aa0c53f7005f9b783b\",\"display_name\":\"Lava Bucket\",\"icon_name\":\"LAVA_BUCKET\",\"price\":900,\"rank\":\"UNCOMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689578923,\"last_updated\":1584690244771}]",
+        "authorization": false
+    },
+    "server/{server-id}/icon/purchase-POST": {
+        "description": [
+            "Purchases an icon."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/server/{server-id}/icon/purchase",
+        "request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
+        "authorization": true
+    },
+    "server/{server-id}/icons/equip-POST": {
+        "description": [
+            "Changes a server's icon."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/server/{server-id}/icon/equip",
+        "request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
+        "authorization": true
     },
     "plugins_public-GET": {
         "description": [
@@ -70,9 +97,18 @@
         "request": "{\"email\":\"spongebob@squarep.ants\",\"birthday\":\"1986-01-02T00:05:40.082Z\"}",
         "authorization": false
     },
+    "users/check_email_code-POST": {
+        "description": [
+            "Checks email code."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/users/check_email_code",
+        "request": "{\"email_code\":\"P1N34PPL3\"}",
+        "authorization": false
+    },
     "users/confirm_email-POST": {
         "description": [
-            "Verifies email code."
+            "Verifies email code and sets password."
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/users/confirm_email",
@@ -136,6 +172,14 @@
         ],
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/start",
+        "authorization": true
+    },
+    "server/{server-id}/restart-POST": {
+        "description": [
+            "Restarts the server."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/server/{server-id}/restart",
         "authorization": true
     },
     "server/{server-id}/shutdown-POST": {
@@ -230,6 +274,15 @@
         "method": "POST",
         "endpoint": "https://api.minehut.com/server/{server-id}/edit_server_properties",
         "request": "{\"field\":\"Seebelowforpossiblevalues\",\"value\":\"Avaluepertainingtothefield\"}",
+        "authorization": true
+    },
+    "file/upload/{server-id}/{file-path}-POST": {
+        "description": [
+            "Uploads a file."
+        ],
+        "method": "POST",
+        "endpoint": "https://api.minehut.com/file/upload/{server-id}/{file-path}",
+        "request": "File(binary)",
         "authorization": true
     },
     "file/world/upload/{server-id}-POST": {
@@ -412,6 +465,24 @@
         "endpoint": "https://api.minehut.com/admin/stats/subscriptions/new/month",
         "authorization": true
     },
+    "network/simple_stats-GET": {
+        "description": [
+            "Returns some stats about the network."
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/network/simple_stats",
+        "response": "{\"player_count\":14348,\"server_count\":9042,\"server_max\":13000,\"ram_count\":9476302,\"ram_max\":36000}",
+        "authorization": false
+    },
+    "network/homepage_stats-GET": {
+        "description": [
+            "Returns some stats for the homepage."
+        ],
+        "method": "GET",
+        "endpoint": "https://api.minehut.com/network/homepage_stats",
+        "response": "{\"server_count\":1543581,\"user_count\":1205537}",
+        "authorization": false
+    },
     "network/stats/joins/month-GET": {
         "description": [
             "Monthly joins"
@@ -450,7 +521,7 @@
         ],
         "method": "GET",
         "endpoint": "https://api.minehut.com/network/players/distribution",
-        "authorization": true
+        "authorization": false
     },
     "website/navbar/promotion-GET": {
         "description": [
