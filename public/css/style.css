@@ -11,6 +11,8 @@ body {
   -webkit-transition: background 250ms;
   transition: background 250ms;
   background: #111;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .dark {
@@ -512,9 +514,8 @@ input[type="text"] {
   -webkit-transition: 250ms cubic-bezier(0, 0, 0, 1);
   transition: 250ms cubic-bezier(0, 0, 0, 1);
   outline: none;
-  height: 30px;
   font-size: 1rem;
-  margin-top: 20px;
+  z-index: 0;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
 }
@@ -525,6 +526,7 @@ input[type="text"]:hover, input[type="text"]:focus {
           transform: scale(1.05);
   -webkit-filter: brightness(1.5);
           filter: brightness(1.5);
+  z-index: 1;
 }
 
 input[type="text"]::-webkit-input-placeholder {
@@ -555,6 +557,8 @@ input[type="text"]#api-search {
   position: -webkit-sticky;
   position: sticky;
   padding: 15px;
+  margin-top: 20px;
+  height: 30px;
   display: block;
   width: calc(100% - 30px);
   top: 60px;
@@ -580,4 +584,30 @@ input[type="text"]#api-search {
         background-position: 200% 200%;
     }
 }*/
+button {
+  position: relative;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(-45deg, #0088FF, #004CFF, #0088FF);
+  background-size: 200%;
+  -webkit-transition: 250ms cubic-bezier(0, 0, 0, 1);
+  transition: 250ms cubic-bezier(0, 0, 0, 1);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+  color: white;
+  font-size: 1.1rem;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  outline: none;
+  z-index: 0;
+}
+
+button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-position: 100%;
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+  z-index: 1;
+}
 /*# sourceMappingURL=style.css.map */

@@ -98,10 +98,30 @@ function docs(d: any) {
     }
     $(".copy").click(function() {
         const name = $(this).parent().siblings(".name").text()
-        navigator.clipboard.writeText(name)
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(name)
+        } else {
+            $("body").append(`<textarea>${name}</textarea>`)
+            $("textarea").css("height", "0")
+            $("textarea")[0].focus()
+            // @ts-ignore
+            $("textarea")[0].select()
+            document.execCommand("copy")
+            $("textarea").remove()
+        }
     })
     $(".copy-doc").click(function() {
         const name = window.location.href.split("#")[0] + "#" + $(this).parent().parent().parent().attr("id")
-        navigator.clipboard.writeText(name)
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(name)
+        } else {
+            $("body").append(`<textarea>${name}</textarea>`)
+            $("textarea").css("height", "0")
+            $("textarea")[0].focus()
+            // @ts-ignore
+            $("textarea")[0].select()
+            document.execCommand("copy")
+            $("textarea").remove()
+        }
     })
 }

@@ -1,18 +1,15 @@
-class Minehut extends React.Component {
-    render() {
-        return (
-            <main>
-                <h2>Welcome to the Minehut page. You can check out the API docs, server stats, and server lookup.</h2>
-                <div className="no-container">
-                    <div className="cards">
-                        <a href="minehut/api" className="card"><h1>API Documentation</h1></a>
-                        <a href="#" className="card"><h1>Server Statistics</h1></a>
-                        <a href="#" className="card"><h1>Server Lookup</h1></a>
-                    </div>
+function Minehut() {
+    return (
+        <main>
+            <h2>Welcome to the Minehut page. You can check out the API docs, server stats, and server lookup.</h2>
+            <div className="no-container">
+                <div className="cards">
+                    <a href="minehut/api" className="card"><h1>API Documentation</h1></a>
+                    <a href="minehut/lookup" className="card"><h1>Server Lookup</h1></a>
                 </div>
-            </main>
-        )
-    }
+            </div>
+        </main>
+    )
 }
 
 

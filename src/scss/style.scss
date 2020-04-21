@@ -12,6 +12,7 @@ body {
     overflow-x: hidden;
     transition: background 250ms;
     background: #111;
+    box-sizing: border-box;
 }
 
 .dark {
@@ -464,9 +465,8 @@ input[type="text"] {
     color: white;
     transition: 250ms cubic-bezier(0, 0, 0, 1);
     outline: none;
-    height: 30px;
     font-size: 1rem;
-    margin-top: 20px;
+    z-index: 0;
     box-shadow: 
         0 10px 20px rgba(0, 0, 0, .1),
         0 4px 6px rgba(0, 0, 0, .15);
@@ -474,6 +474,7 @@ input[type="text"] {
         background-position: 100% 100%;
         transform: scale(1.05);
         filter: brightness(1.5);
+        z-index: 1
     }
     &::placeholder {
         color: gray;
@@ -483,6 +484,8 @@ input[type="text"] {
     &#api-search {
         position: sticky;
         padding: 15px;
+        margin-top: 20px;
+        height: 30px;
         display: block;
         width: calc(100% - 30px);
         top: 60px;
@@ -509,3 +512,27 @@ input[type="text"] {
         background-position: 200% 200%;
     }
 }*/
+
+button {
+    position: relative;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(-45deg, #0088FF, #004CFF, #0088FF);
+    background-size: 200%;
+    transition: 250ms cubic-bezier(0, 0, 0, 1);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, .1),
+        0 4px 6px rgba(0, 0, 0, .15);
+    color: white;
+    font-size: 1.1rem;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    outline: none;
+    z-index: 0;
+    &:hover {
+        transform: scale(1.05);
+        background-position: 100%;
+        filter: brightness(1.5);
+        z-index: 1;
+    }
+}
