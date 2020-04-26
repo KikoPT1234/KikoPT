@@ -138,7 +138,7 @@
 		"description": ["Gets minecraft link code"],
 		"method": "GET",
 		"endpoint": "https://api.minehut.com/user/{user-id}/minecraft/code",
-		"response": "{\"code\": \"i7bb4f20fa143cfe\"",
+		"response": "{\"code\": \"i7bb4f20fa143cfe\"}",
 		"authorization": true
 	},
 	"/user/{user-id}/minecraft/link/remove-POST": {
