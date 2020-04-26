@@ -1,6 +1,6 @@
-const app = require("./server.js")
-const fs = require("fs")
+const app = require("./server.js");
+const fs = require("fs");
 
-const docs = require("./docs.json")
+const docs = require("./docs.json");
 
-const json = require("./docs.json")
+const json = require("./docs.json");

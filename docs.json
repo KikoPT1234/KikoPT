@@ -1,703 +1,614 @@
 {
-    "servers-GET": {
-        "description": [
-            "Returns a list of currently online servers."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/servers",
-        "response": "{\"servers\":[{\"_id\":\"5cb10c8daaa36b18a20641c6\",\"playerCount\":1,\"online\":true,\"ip\":\"\",\"port\":0,\"managerPort\":37661,\"timeNoPlayers\":0,\"name\":\"GoDutch\",\"motd\":\"AMinehutServer.\",\"maxPlayers\":10,\"visibility\":true,\"platform\":\"java\",\"startedAt\":1555106968198,\"players\":[\"sasquatchboi\"],\"starting\":false,\"stopping\":false,\"exited\":false,\"lastOnlineAt\":1555107100422,\"status\":\"ONLINE\",\"updated\":1555107100422},{\"_id\":\"5c6f3ca5b66d3c55a20364d3\",\"playerCount\":1,\"online\":true,\"ip\":\"\",\"port\":0,\"managerPort\":39915,\"timeNoPlayers\":0,\"name\":\"REAGANZK3L\",\"motd\":\"AMinehutServer.\",\"maxPlayers\":10,\"visibility\":true,\"platform\":\"java\",\"startedAt\":1555105610159,\"players\":[\"Abby_Cakes\"],\"starting\":false,\"stopping\":false,\"exited\":false,\"lastOnlineAt\":1555107100621,\"status\":\"ONLINE\",\"updated\":1555107100621}]}",
-        "authorization": false
-    },
-    "server/{server-id}-GET": {
-        "description": [
-            "Returns basic information of a server using its ID."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/server/{server-id}",
-        "response": "{\"server\":{\"credits_per_day\":0,\"_id\":\"5ca516996eb6c04369419302\",\"owner\":\"5bccb1105f9a3201b7d18341\",\"name\":\"Tabanata\",\"name_lower\":\"tabanata\",\"creation\":1554323097802,\"platform\":\"java\",\"storage_node\":\"s1\",\"__v\":0,\"port\":-1,\"key\":\"ae53981221095a79863632f3753ea9ebaf955f31\",\"last_online\":1555091000155,\"motd\":\"&7TheMinehutpanelingame!\",\"visibility\":false,\"server_properties\":{\"resource_pack\":\"\",\"level_name\":\"world\",\"level_seed\":\"\",\"difficulty\":1,\"hardcore\":false,\"allow_flight\":false,\"generator_settings\":\"\",\"spawn_mobs\":false,\"spawn_animals\":false,\"allow_nether\":false,\"generate_structures\":false,\"gamemode\":2,\"force_gamemode\":true,\"max_players\":10,\"level_type\":\"FLAT\",\"announce_player_achievements\":false,\"enable_command_block\":true,\"pvp\":false},\"suspended\":false,\"active_plugins\":[\"5a42c0de69957f3d220592e9\",\"5cabaf1ca8b6db60f425e53a\",\"5a42c29c69957f3d220592ef\",\"5c3533ab299bc02b597d60fd\",\"5a42c13269957f3d220592ea\",\"5a42c30069957f3d220592f0\",\"5a42c19769957f3d220592ec\"],\"purchased_plugins\":[]}}",
-        "authorization": false
-    },
-    "server/{server-name}?byName=true-GET": {
-        "description": [
-            "Returns basic information of a server using its name."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/server/{server-name}?byName=true",
-        "authorization": false
-    },
-    "servers/icons-GET": {
-        "description": [
-            "Returns all the server icons and their information"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/servers/icons",
-        "response": "[{\"_id\":\"5e74715ead31770058c5f29e\",\"display_name\":\"Golden Pickaxe\",\"icon_name\":\"GOLDEN_PICKAXE\",\"price\":1700,\"rank\":\"EPIC\",\"available\":true,\"disabled\":false,\"__v\":0,\"created\":1584689502429,\"last_updated\":1584689650210},{\"_id\":\"5e7471730275560052b2ea00\",\"display_name\":\"Grass Block\",\"icon_name\":\"GRASS_BLOCK\",\"price\":1200,\"rank\":\"RARE\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689523612,\"last_updated\":1584690201507},{\"_id\":\"5e7471850275560052b2ea01\",\"display_name\":\"Diamond Sword\",\"icon_name\":\"DIAMOND_SWORD\",\"price\":2500,\"rank\":\"LEGENDARY\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689541533,\"last_updated\":1584690217437},{\"_id\":\"5e74719738451e006888cb08\",\"display_name\":\"Cake\",\"icon_name\":\"CAKE\",\"price\":500,\"rank\":\"COMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689559684,\"last_updated\":1584690229264},{\"_id\":\"5e7471aa0c53f7005f9b783b\",\"display_name\":\"Lava Bucket\",\"icon_name\":\"LAVA_BUCKET\",\"price\":900,\"rank\":\"UNCOMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689578923,\"last_updated\":1584690244771}]",
-        "authorization": false
-    },
-    "servers/available_icons-GET": {
-        "description": [
-            "Returns the available server icons and their information"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/servers/available_icons",
-        "response": "[{\"_id\":\"5e74715ead31770058c5f29e\",\"display_name\":\"Golden Pickaxe\",\"icon_name\":\"GOLDEN_PICKAXE\",\"price\":1700,\"rank\":\"EPIC\",\"available\":true,\"disabled\":false,\"__v\":0,\"created\":1584689502429,\"last_updated\":1584689650210},{\"_id\":\"5e7471730275560052b2ea00\",\"display_name\":\"Grass Block\",\"icon_name\":\"GRASS_BLOCK\",\"price\":1200,\"rank\":\"RARE\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689523612,\"last_updated\":1584690201507},{\"_id\":\"5e7471850275560052b2ea01\",\"display_name\":\"Diamond Sword\",\"icon_name\":\"DIAMOND_SWORD\",\"price\":2500,\"rank\":\"LEGENDARY\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689541533,\"last_updated\":1584690217437},{\"_id\":\"5e74719738451e006888cb08\",\"display_name\":\"Cake\",\"icon_name\":\"CAKE\",\"price\":500,\"rank\":\"COMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689559684,\"last_updated\":1584690229264},{\"_id\":\"5e7471aa0c53f7005f9b783b\",\"display_name\":\"Lava Bucket\",\"icon_name\":\"LAVA_BUCKET\",\"price\":900,\"rank\":\"UNCOMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689578923,\"last_updated\":1584690244771}]",
-        "authorization": false
-    },
-    "server/{server-id}/icon/purchase-POST": {
-        "description": [
-            "Purchases an icon."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/icon/purchase",
-        "request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
-        "authorization": true
-    },
-    "server/{server-id}/icons/equip-POST": {
-        "description": [
-            "Changes a server's icon."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/icon/equip",
-        "request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
-        "authorization": true
-    },
-    "plugins_public-GET": {
-        "description": [
-            "Returns all the available plugins with their info."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/plugins_public",
-        "response": "{\"all\":[{\"_id\":\"5a42ba4846246d33fa64c625\",\"name\":\"Essentials\",\"credits\":0,\"platform\":\"java\",\"desc\":\"Essentialcommands\",\"desc_extended\":\"\",\"version\":\"2.15.0.1\",\"disabled\":false,\"file_name\":\"Essentials.jar\",\"config_file_name\":\"\",\"__v\":0,\"created\":1536882007186,\"last_updated\":1552068718798}],\"bedrock\":[{\"_id\":\"5a1644e734fe6fad3dcb1903\",\"name\":\"FactionsPro\",\"credits\":0,\"platform\":\"bedrock\",\"description\":\"CreateyourFaction,ClaimyourLand,FightyourEnemies!\",\"version\":\"1.3.11\",\"file_name\":\"FactionsPro.phar\",\"disabled\":false,\"desc\":\"Createyourfaction,ClaimyourLand,FightyourEnemies!\",\"desc_extended\":\"WiththispluginplayersgroupupinFactions.You<strong>claimland</strong>asyourownand<strong>buildyourbase</strong>...\",\"config_file_name\":\"\",\"created\":1511327459335,\"last_updated\":1549113504433}]}",
-        "authorization": false
-    },
-    "users/login-POST": {
-        "description": [
-            "Returns token, user id, and servers from login credentials."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/users/login",
-        "response": "{\"_id\":\"5bccb1105f9a3201b7d18341\",\"token\":\"00w0-14v4-h33h33-p3d0\",\"servers\":[\"5bccb1a8bb9a640173720586\",\"5ca516996eb6c04369419302\"]}",
-        "request": "{\"email\":\"spongebob@squarep.ants\",\"password\":\"ILiveInAPineappleUnderTheSea404\"}",
-        "authorization": false
-    },
-    "users/ghost_login-POST": {
-        "description": [
-            "Returns the same data as /users/login, but instead of using a request body, it uses authorization."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/users/ghost_login",
-        "authorization": true
-    },
-    "users/signup-POST": {
-        "description": [
-            "Create an account using an email and date of birth. Also sends a verification code to said email."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/users/signup",
-        "request": "{\"email\":\"spongebob@squarep.ants\",\"birthday\":\"1986-01-02T00:05:40.082Z\"}",
-        "authorization": false
-    },
-    "users/check_email_code-POST": {
-        "description": [
-            "Checks email code."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/users/check_email_code",
-        "request": "{\"email_code\":\"P1N34PPL3\"}",
-        "authorization": false
-    },
-    "users/confirm_email-POST": {
-        "description": [
-            "Verifies email code and sets password."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/users/confirm_email",
-        "request": "{\"email_code\":\"P1N34PPL3\",\"password\":\"P@ssw0rd1234\"}",
-        "authorization": false
-    },
-    "user/{user-id}-GET": {
-        "description": [
-            "Returns user info."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/user/{user-id}",
-        "response": "{ \"user\":{  \"credits\":0,  \"_id\":\"5cb11bff5c3ebc1955c33852\",  \"email\":\"spongebob@squarep.ants\",  \"email_verified\":true,  \"email_sent_at\":1555110621197,  \"created_at\":1555110621060,  \"birthday\":\"1992-01-02T00:10:25.612Z\",  \"__v\":0,  \"email_code\":\"e3il0\",  \"last_password_change\":1555110670755,  \"token\":\"12c90781-738e-4c62-a53b-bc88b25f759b\",  \"last_login\":1555169889763,  \"servers\":[\"5cb11d898c3ebc1969c33858\"] }}",
-        "authorization": true
-    },
-    "servers/{user-id}/all_data-GET": {
-        "description": [
-            "Returns all the servers belonging to the user."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/servers/{user-id}/all_data",
-        "response": "[{\"_id\":\"5ab92d51514ae22fbd45af97\",\"owner\":\"5ab92d14f528e45f8860da98\",\"name\":\"hElLo\",\"name_lower\":\"hello\",\"creation\":1522085201482,\"platform\":\"java\",\"__v\":0,\"port\":-1,\"motd\":\"The hello server :D\",\"key\":\"de87793tcebebd4d8a8c445d515c5c4e117019d0\",\"last_online\":1583016769717,\"credits_per_day\":0,\"storage_node\":\"s1\",\"visibility\":true,\"server_properties\":{\"view_distance\":8,\"resource_pack_sha1\":\"\",\"resource_pack\":\"\",\"generator_settings\":\"\",\"level_name\":\"world\",\"allow_nether\":true,\"level_seed\":\"\",\"pvp\":true,\"hardcore\":false,\"force_gamemode\":false,\"spawn_mobs\":true,\"spawn_animals\":true,\"allow_flight\":false,\"max_players\":10,\"level_type\":\"FLAT\",\"spawn_protection\":0,\"gamemode\":0,\"difficulty\":0,\"enable_command_block\":true,\"announce_player_achievements\":true,\"generate_structures\":false},\"suspended\":false,\"purchased_icons\":[],\"active_plugins\":[],\"purchased_plugins\":[],\"max_ram\":1024,\"online\":false,\"service_online\":false,\"player_count\":0,\"max_players\":0,\"server_ip\":\"\",\"server_port\":0,\"time_no_players\":0,\"players\":[],\"started_at\":0,\"stopped_at\":0,\"starting\":false,\"stopping\":false,\"exited\":false,\"status\":\"SERVICE_OFFLINE\",\"metrics\":{},\"transfer_scheduled\":false},{\"_id\":\"5aba0d11514ae22fbd45b03e\",\"owner\":\"5ab92d14f528e62f8860da98\",\"name\":\"SpaceScape\",\"name_lower\":\"spacescape\",\"creation\":1522142481893,\"platform\":\"java\",\"__v\":1,\"port\":-1,\"motd\":\"&1&lSpaceScape &9&lBeta\\n&b&lNew Prison!\",\"credits_per_day\":0,\"storage_node\":\"s1\",\"visibility\":true,\"key\":\"8757c17b28c58b581d5b66882c8701fcbf573abd\",\"last_online\":1582996365307,\"offer\":\"2gb20slots\",\"server_properties\":{\"spawn_protection\":16,\"gamemode\":2,\"force_gamemode\":false,\"pvp\":true,\"spawn_mobs\":false,\"spawn_animals\":false,\"allow_flight\":false,\"difficulty\":2,\"hardcore\":false,\"enable_command_block\":true,\"announce_player_achievements\":false,\"allow_nether\":true,\"generate_structures\":false,\"level_type\":\"FLAT\",\"generator_settings\":\"2;0;1;\",\"level_name\":\"space\",\"level_seed\":\"\",\"max_players\":10,\"resource_pack\":\"\",\"resource_pack_sha1\":\"\",\"view_distance\":8},\"suspended\":false,\"purchased_icons\":[],\"active_plugins\":[],\"purchased_plugins\":[],\"max_ram\":1024,\"online\":false,\"service_online\":false,\"player_count\":0,\"max_players\":0,\"server_ip\":\"\",\"server_port\":0,\"time_no_players\":0,\"players\":[],\"started_at\":0,\"stopped_at\":0,\"starting\":false,\"stopping\":false,\"exited\":false,\"status\":\"SERVICE_OFFLINE\",\"metrics\":{},\"transfer_scheduled\":false}]",
-        "authorization": true
-    },
-    "servers/create-POST": {
-        "description": [
-            "Creates a new server on the specified account. If there's already 2 or more slots, 400 credits will be taken for a new one."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/servers/create",
-        "request": "{\"name\":\"MyServer\",\"platform\":\"java\"}",
-        "authorization": true
-    },
-    "servers/{server-id}/server_data-GET": {
-        "description": [
-            "Returns similar information to /server/{server-id}."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/servers/{server-id}/server_data",
-        "authorization": true
-    },
-    "server/{server-id}/status-GET": {
-        "description": [
-            "Returns the status of the server (starting, stopping, players online, plugins etc.)."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/server/{server-id}/status",
-        "authorization": true
-    },
-    "server/{server-id}/start_service-POST": {
-        "description": [
-            "Brings the server out of hibernation and starts it."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/start_service",
-        "authorization": true
-    },
-    "server/{server-id}/start-POST": {
-        "description": [
-            "Starts the server only if it's not in hibernation."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/start",
-        "authorization": true
-    },
-    "server/{server-id}/restart-POST": {
-        "description": [
-            "Restarts the server."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/restart",
-        "authorization": true
-    },
-    "server/{server-id}/shutdown-POST": {
-        "description": [
-            "Stops the server, but does not put it in hibernation (will still hibernate after five minutes)."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/shutdown",
-        "authorization": true
-    },
-    "server/{server-id}/destroy_service-POST": {
-        "description": [
-            "Immediately stops the server and puts it in hibernation."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/destroy_service",
-        "authorization": true
-    },
-    "server/{server-id}/repair_files-POST": {
-        "description": [
-            "Attempts to repair the server files incase there's an issue."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/repair_files",
-        "authorization": true
-    },
-    "server/{server-id}/reset_all-POST": {
-        "description": [
-            "Completely resets the server (Erases all files on it)."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/reset_all",
-        "authorization": true
-    },
-    "server/{server-id}/send_command-POST": {
-        "description": [
-            "Runs a console command to the server."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/send_command",
-        "request": "{\"command\":\"/sayHelloWorld!\"}",
-        "authorization": true
-    },
-    "server/{server-id}/change_name-POST": {
-        "description": [
-            "Changes the server's name. Responds with status code 400 if the name is already taken."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/change_name",
-        "request": "{\"name\":\"MyServer2.0\"}",
-        "authorization": true
-    },
-    "server/{server-id}/change_motd-POST": {
-        "description": [
-            "Changes the server's MOTD (message of the day)."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/change_motd",
-        "request": "{\"motd\":\"&6Ooo\\n&athisisnice!\"}",
-        "authorization": true
-    },
-    "server/{server-id}/visibility-POST": {
-        "description": [
-            "Changes whether your server appears in the server list."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/visibility",
-        "request": "{\"visibility\":\"true/false\"}",
-        "authorization": true
-    },
-    "server/{server-id}/save-POST": {
-        "description": [
-            "Saves the server's world."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/save",
-        "authorization": true
-    },
-    "server/{server-id}/reset_world-POST": {
-        "description": [
-            "Resets the server's world with a new seed."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/reset_world",
-        "authorization": true
-    },
-    "server/{server-id}/edit_server_properties-POST": {
-        "description": [
-            "Changes values in the server.properties file.",
-            "Possible fields are {max_players}, {level_type}, {level_name}, {generator_settings}, {gamemode}, {force_gamemode}, {pvp}, {spawn_mobs}, {spawn_animals}, {allow_flight}, {generator_settings}, {difficulty, hardcore}, {enable_command_block}, {announce_player_achievements}, {allow_nether}, {generate_structures}, and {resource_pack}."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/edit_server_properties",
-        "request": "{\"field\":\"Seebelowforpossiblevalues\",\"value\":\"Avaluepertainingtothefield\"}",
-        "authorization": true
-    },
-    "file/upload/{server-id}/{file-path}-POST": {
-        "description": [
-            "Uploads a file."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/file/upload/{server-id}/{file-path}",
-        "request": "File(binary)",
-        "authorization": true
-    },
-    "file/world/upload/{server-id}-POST": {
-        "description": [
-            "Uploads a .zip world."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/file/world/upload/{server-id}",
-        "request": "File(binary)",
-        "authorization": true
-    },
-    "server/{server-id}/plugins-POST": {
-        "description": [
-            "Returns all the plugins and whether they are installed or not."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/plugins",
-        "response": "{ \"plugins\":[{  \"state\":\"PURCHASED\",  \"_id\":\"5a42ba4846246d33fa64c625\",  \"name\":\"Essentials\",  \"credits\":0,  \"platform\":\"java\",  \"desc\":\"Essentialcommands\",  \"desc_extended\":\"\",  \"version\":\"2.15.0.1\",  \"disabled\":false,  \"file_name\":\"Essentials.jar\",  \"config_file_name\":\"\",  \"__v\":0,  \"created\":1536882007186,  \"last_updated\":1552068718798 }, {  \"state\":\"PURCHASED\",  \"_id\":\"5a42bb0246246d33fa64c627\",  \"name\":\"EssentialsChat\",  \"credits\":0,  \"platform\":\"java\",  \"desc\":\"Formatthechattomakeitlooknicer.\",  \"desc_extended\":\"RequiresVault\",  \"version\":\"2.15.0.1\",  \"disabled\":false,  \"file_name\":\"EssentialsChat.jar\",  \"config_file_name\":\"\",  \"__v\":0,  \"created\":1536882039069,  \"last_updated\":1536882039069 }]}",
-        "authorization": true
-    },
-    "server/{server-id}/install_plugin-POST": {
-        "description": [
-            "Installs a plugin onto the server."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/install_plugin",
-        "request": "{\"plugin\":\"5a42ba4846246d33fa64c625\"}",
-        "authorization": true
-    },
-    "server/{server-id}/remove_plugin-POST": {
-        "description": [
-            "Uninstalls a plugin from the server."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/remove_plugin",
-        "request": "{\"plugin\":\"5a42ba4846246d33fa64c625\"}",
-        "authorization": true
-    },
-    "server/{server-id}/remove_plugin_data-POST": {
-        "description": [
-            "Resets the plugin configuration file."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{server-id}/remove_plugin_data",
-        "request": "{\"plugin\":\"5a42ba4846246d33fa64c625\"}",
-        "authorization": true
-    },
-    "file/{server-id}/list-GET": {
-        "description": [
-            "Returns all the files and folders in the server's root directory."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/file/{server-id}/list",
-        "response": "{ \"files\":[{  \"name\":\"banned-ips.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"banned-players.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"bukkit.yml\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"commands.yml\",  \"directory\":false,  \"blocked\":false }, {  \"name\":\"whitelist.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"world\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_nether\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_the_end\",  \"directory\":true,  \"blocked\":true }]}",
-        "authorization": true
-    },
-    "file/{server-id}/list/{path}-GET": {
-        "description": [
-            "Returns all the files and folders in the provided file path."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/file/{server-id}/list/{path}",
-        "response": "{ \"files\":[{  \"name\":\"banned-ips.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"banned-players.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"bukkit.yml\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"commands.yml\",  \"directory\":false,  \"blocked\":false }, {  \"name\":\"whitelist.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"world\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_nether\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_the_end\",  \"directory\":true,  \"blocked\":true }]}",
-        "authorization": true
-    },
-    "file/{server-id}/read/{file-path}-GET": {
-        "description": [
-            "Returns all the contents of a file."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/file/{server-id}/read/{file-path}",
-        "response": "{ \"content\":\"Thecontentsofthefilewillbeinhere\"}",
-        "authorization": true
-    },
-    "file/{server-id}/edit/{file-path}-POST": {
-        "description": [
-            "Edits a file and saves it with the provided content.",
-            "This also creates a file if one does not exist (provide a blank content for a blank file)",
-            "The maximum file upload size is approximately 4 gigabytes."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/file/{server-id}/edit/{file-path}",
-        "request": "{\"content\":\"Thistextwilloverwritewhateverisinsidethefile\"}",
-        "authorization": true
-    },
-    "file/{server-id}/delete/{file-path}-POST": {
-        "description": [
-            "Deletes a file."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/file/{server-id}/delete/{file-path}",
-        "authorization": true
-    },
-    "file/{server-id}/folder/create-POST": {
-        "description": [
-            "Creates a new folder in the directory."
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/file/{server-id}/folder/create",
-        "request": "{\"name\":\"MyFolder\",\"directory\":\"world\"}",
-        "authorization": true
-    },
-    "admin/stats/users/registrations/week-GET": {
-        "description": [
-            "Weekly user registrations"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/users/registrations/week",
-        "authorization": true
-    },
-    "admin/stats/subscriptions/week-GET": {
-        "description": [
-            "Weekly subscriptions"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/subscriptions/week",
-        "authorization": true
-    },
-    "admin/stats/subscriptions/new/week-GET": {
-        "description": [
-            "Weekly new subscriptions"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/subscriptions/new/week",
-        "authorization": true
-    },
-    "network/stats/joins/week-GET": {
-        "description": [
-            "Weekly joins"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/stats/joins/week",
-        "authorization": true
-    },
-    "network/stats/joins/week/java-GET": {
-        "description": [
-            "Weekly java joins"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/stats/joins/week/java",
-        "authorization": true
-    },
-    "admin/stats/subscriptions/cancellations/week-GET": {
-        "description": [
-            "Weekly subscription cancellations"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/subscriptions/cancellations/week",
-        "authorization": true
-    },
-    "admin/stats/votes/week-GET": {
-        "description": [
-            "Weekly votes"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/votes/week",
-        "authorization": true
-    },
-    "admin/stats/users/registrations/month-GET": {
-        "description": [
-            "Monthly user registrations"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/users/registrations/month",
-        "authorization": true
-    },
-    "admin/stats/subscriptions/month-GET": {
-        "description": [
-            "Monthly subscriptions"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/subscriptions/month",
-        "authorization": true
-    },
-    "admin/stats/subscriptions/new/month-GET": {
-        "description": [
-            "Monthly new subscriptions"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/subscriptions/new/month",
-        "authorization": true
-    },
-    "network/simple_stats-GET": {
-        "description": [
-            "Returns some stats about the network."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/simple_stats",
-        "response": "{\"player_count\":14348,\"server_count\":9042,\"server_max\":13000,\"ram_count\":9476302,\"ram_max\":36000}",
-        "authorization": false
-    },
-    "network/homepage_stats-GET": {
-        "description": [
-            "Returns some stats for the homepage."
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/homepage_stats",
-        "response": "{\"server_count\":1543581,\"user_count\":1205537}",
-        "authorization": false
-    },
-    "network/stats/joins/month-GET": {
-        "description": [
-            "Monthly joins"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/stats/joins/month",
-        "authorization": true
-    },
-    "network/stats/joins/month/java-GET": {
-        "description": [
-            "Monthly java joins"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/stats/joins/month/java",
-        "authorization": true
-    },
-    "admin/stats/subscriptions/cancellations/month-GET": {
-        "description": [
-            "Monthly subscription cancellations"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/subscriptions/cancellations/month",
-        "authorization": true
-    },
-    "admin/stats/votes/month-GET": {
-        "description": [
-            "Monthly votes"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/admin/stats/votes/month",
-        "authorization": true
-    },
-    "network/players/distribution-GET": {
-        "description": [
-            "Player distribution"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/network/players/distribution",
-        "authorization": false
-    },
-    "website/navbar/promotion-GET": {
-        "description": [
-            "Get navbar promotion"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/website/navbar/promotion",
-        "response": "{\"text\":\"Vote every day for 25 free credits! �🏧\",\"link\":\"http://bit.ly/vote4mh\"}",
-        "authorization": true
-    },
-    "website/navbar/promotion-POST": {
-        "description": [
-            "Update navbar promotion"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/website/navbar/promotion",
-        "authorization": true
-    },
-    "user/{name}?byEmail=true-GET": {
-        "description": [
-            "Get user info from email"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/user/{name}?byEmail=true",
-        "authorization": true
-    },
-    "user/{name}?byMinecraftName=true-GET": {
-        "description": [
-            "Get user info from minehut name"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/user/{name}?byMinecraftName=true",
-        "authorization": true
-    },
-    "user/{name}/add_credits/amount-POST": {
-        "description": [
-            "Add credits to user"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/user/{name}/add_credits/amount",
-        "authorization": true
-    },
-    "user/{name}/delete_session-POST": {
-        "description": [
-            "Delete user session"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/user/{name}/delete_session",
-        "authorization": true
-    },
-    "admin/add/{name}-POST": {
-        "description": [
-            "Add new admin"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/add/{name}",
-        "authorization": true
-    },
-    "admin/gdpr/{user}-POST": {
-        "description": [
-            "GDPR dump"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/gdpr/{user}",
-        "authorization": true
-    },
-    "admin/delete/{user}-POST": {
-        "description": [
-            "Delete account"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/delete/{user}",
-        "authorization": true
-    },
-    "server/{name}/destroy_service_admin-POST": {
-        "description": [
-            "Destroy server service"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/server/{name}/destroy_service_admin",
-        "authorization": true
-    },
-    "admin/{name}/suspend-POST": {
-        "description": [
-            "Suspend server"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/{name}/suspend",
-        "authorization": true
-    },
-    "admin/{name}/release-POST": {
-        "description": [
-            "Release a server from suspension"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/{name}/release",
-        "authorization": true
-    },
-    "plugins-GET": {
-        "description": [
-            "Get plugins"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/plugins",
-        "authorization": true
-    },
-    "plugin/id/edit-POST": {
-        "description": [
-            "Edit plugin"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/plugin/id/edit",
-        "authorization": true
-    },
-    "plugin/id/delete-POST": {
-        "description": [
-            "Delete plugin"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/plugin/id/delete",
-        "authorization": true
-    },
-    "plugins-POST": {
-        "description": [
-            "Add plugin"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/plugins",
-        "authorization": true
-    },
-    "admin/payments/range-POST": {
-        "description": [
-            "Payment range"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/payments/range",
-        "authorization": true
-    },
-    "admin/credits/range-POST": {
-        "description": [
-            "Credit ranges"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/credits/range",
-        "authorization": true
-    },
-    "admin/voting/set/reward-POST": {
-        "description": [
-            "Update vote award"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/voting/set/reward",
-        "authorization": true
-    },
-    "vote/reward-GET": {
-        "description": [
-            "Current voting award"
-        ],
-        "method": "GET",
-        "endpoint": "https://api.minehut.com/vote/reward",
-        "authorization": true
-    },
-    "admin/votes/range-POST": {
-        "description": [
-            "Voting range"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/admin/votes/range",
-        "authorization": true
-    },
-    "network/motd-POST": {
-        "description": [
-            "Update Bungeecord MOTD"
-        ],
-        "method": "POST",
-        "endpoint": "https://api.minehut.com/network/motd",
-        "authorization": true
-    }
+	"servers-GET": {
+		"description": ["Returns a list of currently online servers."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/servers",
+		"response": "{\"servers\":[{\"_id\":\"5cb10c8daaa36b18a20641c6\",\"playerCount\":1,\"online\":true,\"ip\":\"\",\"port\":0,\"managerPort\":37661,\"timeNoPlayers\":0,\"name\":\"GoDutch\",\"motd\":\"AMinehutServer.\",\"maxPlayers\":10,\"visibility\":true,\"platform\":\"java\",\"startedAt\":1555106968198,\"players\":[\"sasquatchboi\"],\"starting\":false,\"stopping\":false,\"exited\":false,\"lastOnlineAt\":1555107100422,\"status\":\"ONLINE\",\"updated\":1555107100422},{\"_id\":\"5c6f3ca5b66d3c55a20364d3\",\"playerCount\":1,\"online\":true,\"ip\":\"\",\"port\":0,\"managerPort\":39915,\"timeNoPlayers\":0,\"name\":\"REAGANZK3L\",\"motd\":\"AMinehutServer.\",\"maxPlayers\":10,\"visibility\":true,\"platform\":\"java\",\"startedAt\":1555105610159,\"players\":[\"Abby_Cakes\"],\"starting\":false,\"stopping\":false,\"exited\":false,\"lastOnlineAt\":1555107100621,\"status\":\"ONLINE\",\"updated\":1555107100621}]}",
+		"authorization": false
+	},
+	"server/{server-id}-GET": {
+		"description": ["Returns basic information of a server using its ID."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/server/{server-id}",
+		"response": "{\"server\":{\"credits_per_day\":0,\"_id\":\"5ca516996eb6c04369419302\",\"owner\":\"5bccb1105f9a3201b7d18341\",\"name\":\"Tabanata\",\"name_lower\":\"tabanata\",\"creation\":1554323097802,\"platform\":\"java\",\"storage_node\":\"s1\",\"__v\":0,\"port\":-1,\"key\":\"ae53981221095a79863632f3753ea9ebaf955f31\",\"last_online\":1555091000155,\"motd\":\"&7TheMinehutpanelingame!\",\"visibility\":false,\"server_properties\":{\"resource_pack\":\"\",\"level_name\":\"world\",\"level_seed\":\"\",\"difficulty\":1,\"hardcore\":false,\"allow_flight\":false,\"generator_settings\":\"\",\"spawn_mobs\":false,\"spawn_animals\":false,\"allow_nether\":false,\"generate_structures\":false,\"gamemode\":2,\"force_gamemode\":true,\"max_players\":10,\"level_type\":\"FLAT\",\"announce_player_achievements\":false,\"enable_command_block\":true,\"pvp\":false},\"suspended\":false,\"active_plugins\":[\"5a42c0de69957f3d220592e9\",\"5cabaf1ca8b6db60f425e53a\",\"5a42c29c69957f3d220592ef\",\"5c3533ab299bc02b597d60fd\",\"5a42c13269957f3d220592ea\",\"5a42c30069957f3d220592f0\",\"5a42c19769957f3d220592ec\"],\"purchased_plugins\":[]}}",
+		"authorization": false
+	},
+	"server/{server-name}?byName=true-GET": {
+		"description": [
+			"Returns basic information of a server using its name."
+		],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/server/{server-name}?byName=true",
+		"authorization": false
+	},
+	"servers/icons-GET": {
+		"description": ["Returns all the server icons and their information"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/servers/icons",
+		"response": "[{\"_id\":\"5e74715ead31770058c5f29e\",\"display_name\":\"Golden Pickaxe\",\"icon_name\":\"GOLDEN_PICKAXE\",\"price\":1700,\"rank\":\"EPIC\",\"available\":true,\"disabled\":false,\"__v\":0,\"created\":1584689502429,\"last_updated\":1584689650210},{\"_id\":\"5e7471730275560052b2ea00\",\"display_name\":\"Grass Block\",\"icon_name\":\"GRASS_BLOCK\",\"price\":1200,\"rank\":\"RARE\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689523612,\"last_updated\":1584690201507},{\"_id\":\"5e7471850275560052b2ea01\",\"display_name\":\"Diamond Sword\",\"icon_name\":\"DIAMOND_SWORD\",\"price\":2500,\"rank\":\"LEGENDARY\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689541533,\"last_updated\":1584690217437},{\"_id\":\"5e74719738451e006888cb08\",\"display_name\":\"Cake\",\"icon_name\":\"CAKE\",\"price\":500,\"rank\":\"COMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689559684,\"last_updated\":1584690229264},{\"_id\":\"5e7471aa0c53f7005f9b783b\",\"display_name\":\"Lava Bucket\",\"icon_name\":\"LAVA_BUCKET\",\"price\":900,\"rank\":\"UNCOMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689578923,\"last_updated\":1584690244771}]",
+		"authorization": false
+	},
+	"servers/available_icons-GET": {
+		"description": [
+			"Returns the available server icons and their information"
+		],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/servers/available_icons",
+		"response": "[{\"_id\":\"5e74715ead31770058c5f29e\",\"display_name\":\"Golden Pickaxe\",\"icon_name\":\"GOLDEN_PICKAXE\",\"price\":1700,\"rank\":\"EPIC\",\"available\":true,\"disabled\":false,\"__v\":0,\"created\":1584689502429,\"last_updated\":1584689650210},{\"_id\":\"5e7471730275560052b2ea00\",\"display_name\":\"Grass Block\",\"icon_name\":\"GRASS_BLOCK\",\"price\":1200,\"rank\":\"RARE\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689523612,\"last_updated\":1584690201507},{\"_id\":\"5e7471850275560052b2ea01\",\"display_name\":\"Diamond Sword\",\"icon_name\":\"DIAMOND_SWORD\",\"price\":2500,\"rank\":\"LEGENDARY\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689541533,\"last_updated\":1584690217437},{\"_id\":\"5e74719738451e006888cb08\",\"display_name\":\"Cake\",\"icon_name\":\"CAKE\",\"price\":500,\"rank\":\"COMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689559684,\"last_updated\":1584690229264},{\"_id\":\"5e7471aa0c53f7005f9b783b\",\"display_name\":\"Lava Bucket\",\"icon_name\":\"LAVA_BUCKET\",\"price\":900,\"rank\":\"UNCOMMON\",\"available\":true,\"__v\":0,\"disabled\":false,\"created\":1584689578923,\"last_updated\":1584690244771}]",
+		"authorization": false
+	},
+	"server/{server-id}/icon/purchase-POST": {
+		"description": ["Purchases an icon."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/icon/purchase",
+		"request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
+		"authorization": true
+	},
+	"server/{server-id}/icons/equip-POST": {
+		"description": ["Changes a server's icon."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/icon/equip",
+		"request": "{\"icon_id\":\"5e74719738451e006888cb08\"}",
+		"authorization": true
+	},
+	"plugins_public-GET": {
+		"description": ["Returns all the available plugins with their info."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/plugins_public",
+		"response": "{\"all\":[{\"_id\":\"5a42ba4846246d33fa64c625\",\"name\":\"Essentials\",\"credits\":0,\"platform\":\"java\",\"desc\":\"Essentialcommands\",\"desc_extended\":\"\",\"version\":\"2.15.0.1\",\"disabled\":false,\"file_name\":\"Essentials.jar\",\"config_file_name\":\"\",\"__v\":0,\"created\":1536882007186,\"last_updated\":1552068718798}],\"bedrock\":[{\"_id\":\"5a1644e734fe6fad3dcb1903\",\"name\":\"FactionsPro\",\"credits\":0,\"platform\":\"bedrock\",\"description\":\"CreateyourFaction,ClaimyourLand,FightyourEnemies!\",\"version\":\"1.3.11\",\"file_name\":\"FactionsPro.phar\",\"disabled\":false,\"desc\":\"Createyourfaction,ClaimyourLand,FightyourEnemies!\",\"desc_extended\":\"WiththispluginplayersgroupupinFactions.You<strong>claimland</strong>asyourownand<strong>buildyourbase</strong>...\",\"config_file_name\":\"\",\"created\":1511327459335,\"last_updated\":1549113504433}]}",
+		"authorization": false
+	},
+	"users/login-POST": {
+		"description": [
+			"Returns token, user id, and servers from login credentials."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/users/login",
+		"response": "{\"_id\":\"5bccb1105f9a3201b7d18341\",\"token\":\"00w0-14v4-h33h33-p3d0\",\"servers\":[\"5bccb1a8bb9a640173720586\",\"5ca516996eb6c04369419302\"]}",
+		"request": "{\"email\":\"spongebob@squarep.ants\",\"password\":\"ILiveInAPineappleUnderTheSea404\"}",
+		"authorization": false
+	},
+	"users/ghost_login-POST": {
+		"description": [
+			"Returns the same data as /users/login, but instead of using a request body, it uses authorization."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/users/ghost_login",
+		"authorization": true
+	},
+	"users/signup-POST": {
+		"description": [
+			"Create an account using an email and date of birth. Also sends a verification code to said email."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/users/signup",
+		"request": "{\"email\":\"spongebob@squarep.ants\",\"birthday\":\"1986-01-02T00:05:40.082Z\"}",
+		"authorization": false
+	},
+	"users/check_email_code-POST": {
+		"description": ["Checks email code."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/users/check_email_code",
+		"request": "{\"email_code\":\"P1N34PPL3\"}",
+		"authorization": false
+	},
+	"users/confirm_email-POST": {
+		"description": ["Verifies email code and sets password."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/users/confirm_email",
+		"request": "{\"email_code\":\"P1N34PPL3\",\"password\":\"P@ssw0rd1234\"}",
+		"authorization": false
+	},
+	"user/{user-id}-GET": {
+		"description": ["Returns user info."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/user/{user-id}",
+		"response": "{ \"user\":{  \"credits\":0,  \"_id\":\"5cb11bff5c3ebc1955c33852\",  \"email\":\"spongebob@squarep.ants\",  \"email_verified\":true,  \"email_sent_at\":1555110621197,  \"created_at\":1555110621060,  \"birthday\":\"1992-01-02T00:10:25.612Z\",  \"__v\":0,  \"email_code\":\"e3il0\",  \"last_password_change\":1555110670755,  \"token\":\"12c90781-738e-4c62-a53b-bc88b25f759b\",  \"last_login\":1555169889763,  \"servers\":[\"5cb11d898c3ebc1969c33858\"] }}",
+		"authorization": true
+	},
+	"user/{user-id}/payments-GET": {
+		"description": ["Returns payment history."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/user/{user-id}/payments",
+		"response": "{\"payments\": [{\"email\":\"hellothere@gmail.com\",\"gateway\":\"paypal\",\"gateway_email\":\"paypalemail@gmail.com\",\"payment_id\":\"I-HGRURGBJ\",\"price\":500,\"time\":1564856646041,\"type\":\"NEW_RECCURING\",\"user\":\"5cf62dbf4383cf78242a0ga1\",\"__v\":0,\"_id\":\"5d45d146631bb92bf57b122b\"},{\"email\":\"hellothere2@gmail.com\",\"gateway\":\"paypal\",\"gateway_email\":\"paypalemail2@gmail.com\",\"payment_id\":\"I-HGRURGBK\",\"price\":500,\"time\":1564856646041,\"type\":\"NEW_RECCURING\",\"user\":\"5cf62dbf4383cf38222a0ga1\",\"__v\":0,\"_id\":\"5d45d146831bb92bf67b1227\"}]}",
+		"authorization": true
+	},
+	"user/{user-id}/transactions-GET": {
+		"description": ["Returns transaction history."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/user/{user-id}/transactions",
+		"response": "{\"transactions\": [{\"desc\":\"Initial credit charge for 25 max players for 5cf42e40sffeh3c1f826fa07b1\",\"ip\":\"1.1.1.1.1\",\"price\":50,\"server_id\":\"5cf423404e85c178267a0ab1\",\"time\":1562823863567,\"type\":\"PLAYER_COUNT_INIT\",\"user\":\"5cf42dbf4e83c38762a0aa1\",\"user_email\":\"hellothere@gmail.com\",\"__v\":0,\"_id\":\"5d26ccb765f5d38c6hfd6438\"},{\"desc\":\"Initial credit charge for 25 max players for 5cf42e46sffeh3c1f826fa07b1\",\"ip\":\"1.1.1.1.2\",\"price\":50,\"server_id\":\"5cf423404e55c178267a0ab1\",\"time\":1562823863567,\"type\":\"PLAYER_COUNT_INIT\",\"user\":\"5cf42dbf4e83c3876250aa1\",\"user_email\":\"hellothere2@gmail.com\",\"__v\":0,\"_id\":\"5d26ccb765f5r37c6hfd6438\"}]}",
+		"authorization": true
+	},
+	"users/change_password-POST": {
+		"description": ["Changes the user's password."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/users/change_password",
+		"request": "{\"email\": \"hellothere@gmail.com\", \"password\": \"newpasswordhere\", \"old_password\": \"oldpasswordhere\"}",
+		"authorization": true
+	},
+	"/servers/purchase-POST": {
+		"description": ["Purchases server slots."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/servers/purchase",
+		"request": "{\"server_quantity\": 1}",
+		"authorization": true
+	},
+	"/user/{user-id}/minecraft/code-GET": {
+		"description": ["Gets minecraft link code"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/user/{user-id}/minecraft/code",
+		"response": "{\"code\": \"i7bb4f20fa143cfe\"",
+		"authorization": true
+	},
+	"/user/{user-id}/minecraft/link/remove-POST": {
+		"description": ["Unlinks Minecraft account."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/user/{user-id}/minecraft/link/remove",
+		"authorization": true
+	},
+	"servers/{user-id}/all_data-GET": {
+		"description": ["Returns all the servers belonging to the user."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/servers/{user-id}/all_data",
+		"response": "[{\"_id\":\"5ab92d51514ae22fbd45af97\",\"owner\":\"5ab92d14f528e45f8860da98\",\"name\":\"hElLo\",\"name_lower\":\"hello\",\"creation\":1522085201482,\"platform\":\"java\",\"__v\":0,\"port\":-1,\"motd\":\"The hello server :D\",\"key\":\"de87793tcebebd4d8a8c445d515c5c4e117019d0\",\"last_online\":1583016769717,\"credits_per_day\":0,\"storage_node\":\"s1\",\"visibility\":true,\"server_properties\":{\"view_distance\":8,\"resource_pack_sha1\":\"\",\"resource_pack\":\"\",\"generator_settings\":\"\",\"level_name\":\"world\",\"allow_nether\":true,\"level_seed\":\"\",\"pvp\":true,\"hardcore\":false,\"force_gamemode\":false,\"spawn_mobs\":true,\"spawn_animals\":true,\"allow_flight\":false,\"max_players\":10,\"level_type\":\"FLAT\",\"spawn_protection\":0,\"gamemode\":0,\"difficulty\":0,\"enable_command_block\":true,\"announce_player_achievements\":true,\"generate_structures\":false},\"suspended\":false,\"purchased_icons\":[],\"active_plugins\":[],\"purchased_plugins\":[],\"max_ram\":1024,\"online\":false,\"service_online\":false,\"player_count\":0,\"max_players\":0,\"server_ip\":\"\",\"server_port\":0,\"time_no_players\":0,\"players\":[],\"started_at\":0,\"stopped_at\":0,\"starting\":false,\"stopping\":false,\"exited\":false,\"status\":\"SERVICE_OFFLINE\",\"metrics\":{},\"transfer_scheduled\":false},{\"_id\":\"5aba0d11514ae22fbd45b03e\",\"owner\":\"5ab92d14f528e62f8860da98\",\"name\":\"SpaceScape\",\"name_lower\":\"spacescape\",\"creation\":1522142481893,\"platform\":\"java\",\"__v\":1,\"port\":-1,\"motd\":\"&1&lSpaceScape &9&lBeta\\n&b&lNew Prison!\",\"credits_per_day\":0,\"storage_node\":\"s1\",\"visibility\":true,\"key\":\"8757c17b28c58b581d5b66882c8701fcbf573abd\",\"last_online\":1582996365307,\"offer\":\"2gb20slots\",\"server_properties\":{\"spawn_protection\":16,\"gamemode\":2,\"force_gamemode\":false,\"pvp\":true,\"spawn_mobs\":false,\"spawn_animals\":false,\"allow_flight\":false,\"difficulty\":2,\"hardcore\":false,\"enable_command_block\":true,\"announce_player_achievements\":false,\"allow_nether\":true,\"generate_structures\":false,\"level_type\":\"FLAT\",\"generator_settings\":\"2;0;1;\",\"level_name\":\"space\",\"level_seed\":\"\",\"max_players\":10,\"resource_pack\":\"\",\"resource_pack_sha1\":\"\",\"view_distance\":8},\"suspended\":false,\"purchased_icons\":[],\"active_plugins\":[],\"purchased_plugins\":[],\"max_ram\":1024,\"online\":false,\"service_online\":false,\"player_count\":0,\"max_players\":0,\"server_ip\":\"\",\"server_port\":0,\"time_no_players\":0,\"players\":[],\"started_at\":0,\"stopped_at\":0,\"starting\":false,\"stopping\":false,\"exited\":false,\"status\":\"SERVICE_OFFLINE\",\"metrics\":{},\"transfer_scheduled\":false}]",
+		"authorization": true
+	},
+	"servers/create-POST": {
+		"description": [
+			"Creates a new server on the specified account. If there's already 2 or more slots, 400 credits will be taken for a new one."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/servers/create",
+		"request": "{\"name\":\"MyServer\",\"platform\":\"java\"}",
+		"authorization": true
+	},
+	"servers/{server-id}/server_data-GET": {
+		"description": ["Returns similar information to /server/{server-id}."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/servers/{server-id}/server_data",
+		"authorization": true
+	},
+	"server/{server-id}/status-GET": {
+		"description": [
+			"Returns the status of the server (starting, stopping, players online, plugins etc.)."
+		],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/server/{server-id}/status",
+		"authorization": true
+	},
+	"server/{server-id}/start_service-POST": {
+		"description": ["Brings the server out of hibernation and starts it."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/start_service",
+		"authorization": true
+	},
+	"server/{server-id}/start-POST": {
+		"description": ["Starts the server only if it's not in hibernation."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/start",
+		"authorization": true
+	},
+	"server/{server-id}/restart-POST": {
+		"description": ["Restarts the server."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/restart",
+		"authorization": true
+	},
+	"server/{server-id}/shutdown-POST": {
+		"description": [
+			"Stops the server, but does not put it in hibernation (will still hibernate after five minutes)."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/shutdown",
+		"authorization": true
+	},
+	"server/{server-id}/destroy_service-POST": {
+		"description": [
+			"Immediately stops the server and puts it in hibernation."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/destroy_service",
+		"authorization": true
+	},
+	"server/{server-id}/repair_files-POST": {
+		"description": [
+			"Attempts to repair the server files incase there's an issue."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/repair_files",
+		"authorization": true
+	},
+	"server/{server-id}/reset_all-POST": {
+		"description": [
+			"Completely resets the server (Erases all files on it)."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/reset_all",
+		"authorization": true
+	},
+	"server/{server-id}/send_command-POST": {
+		"description": ["Runs a console command to the server."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/send_command",
+		"request": "{\"command\":\"/sayHelloWorld!\"}",
+		"authorization": true
+	},
+	"server/{server-id}/change_name-POST": {
+		"description": [
+			"Changes the server's name. Responds with status code 400 if the name is already taken."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/change_name",
+		"request": "{\"name\":\"MyServer2.0\"}",
+		"authorization": true
+	},
+	"server/{server-id}/change_motd-POST": {
+		"description": ["Changes the server's MOTD (message of the day)."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/change_motd",
+		"request": "{\"motd\":\"&6Ooo\\n&athisisnice!\"}",
+		"authorization": true
+	},
+	"server/{server-id}/visibility-POST": {
+		"description": [
+			"Changes whether your server appears in the server list."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/visibility",
+		"request": "{\"visibility\":\"true/false\"}",
+		"authorization": true
+	},
+	"server/{server-id}/save-POST": {
+		"description": ["Saves the server's world."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/save",
+		"authorization": true
+	},
+	"server/{server-id}/reset_world-POST": {
+		"description": ["Resets the server's world with a new seed."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/reset_world",
+		"authorization": true
+	},
+	"server/{server-id}/edit_server_properties-POST": {
+		"description": [
+			"Changes values in the server.properties file.",
+			"Possible fields are {max_players}, {level_type}, {level_name}, {generator_settings}, {gamemode}, {force_gamemode}, {pvp}, {spawn_mobs}, {spawn_animals}, {allow_flight}, {generator_settings}, {difficulty, hardcore}, {enable_command_block}, {announce_player_achievements}, {allow_nether}, {generate_structures}, and {resource_pack}."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/edit_server_properties",
+		"request": "{\"field\":\"Seebelowforpossiblevalues\",\"value\":\"Avaluepertainingtothefield\"}",
+		"authorization": true
+	},
+	"file/upload/{server-id}/{file-path}-POST": {
+		"description": ["Uploads a file."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/file/upload/{server-id}/{file-path}",
+		"request": "File(binary)",
+		"authorization": true
+	},
+	"file/world/upload/{server-id}-POST": {
+		"description": ["Uploads a .zip world."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/file/world/upload/{server-id}",
+		"request": "File(binary)",
+		"authorization": true
+	},
+	"server/{server-id}/plugins-POST": {
+		"description": [
+			"Returns all the plugins and whether they are installed or not."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/plugins",
+		"response": "{ \"plugins\":[{  \"state\":\"PURCHASED\",  \"_id\":\"5a42ba4846246d33fa64c625\",  \"name\":\"Essentials\",  \"credits\":0,  \"platform\":\"java\",  \"desc\":\"Essentialcommands\",  \"desc_extended\":\"\",  \"version\":\"2.15.0.1\",  \"disabled\":false,  \"file_name\":\"Essentials.jar\",  \"config_file_name\":\"\",  \"__v\":0,  \"created\":1536882007186,  \"last_updated\":1552068718798 }, {  \"state\":\"PURCHASED\",  \"_id\":\"5a42bb0246246d33fa64c627\",  \"name\":\"EssentialsChat\",  \"credits\":0,  \"platform\":\"java\",  \"desc\":\"Formatthechattomakeitlooknicer.\",  \"desc_extended\":\"RequiresVault\",  \"version\":\"2.15.0.1\",  \"disabled\":false,  \"file_name\":\"EssentialsChat.jar\",  \"config_file_name\":\"\",  \"__v\":0,  \"created\":1536882039069,  \"last_updated\":1536882039069 }]}",
+		"authorization": true
+	},
+	"server/{server-id}/install_plugin-POST": {
+		"description": ["Installs a plugin onto the server."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/install_plugin",
+		"request": "{\"plugin\":\"5a42ba4846246d33fa64c625\"}",
+		"authorization": true
+	},
+	"server/{server-id}/remove_plugin-POST": {
+		"description": ["Uninstalls a plugin from the server."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/remove_plugin",
+		"request": "{\"plugin\":\"5a42ba4846246d33fa64c625\"}",
+		"authorization": true
+	},
+	"server/{server-id}/remove_plugin_data-POST": {
+		"description": ["Resets the plugin configuration file."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{server-id}/remove_plugin_data",
+		"request": "{\"plugin\":\"5a42ba4846246d33fa64c625\"}",
+		"authorization": true
+	},
+	"file/{server-id}/list-GET": {
+		"description": [
+			"Returns all the files and folders in the server's root directory."
+		],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/file/{server-id}/list",
+		"response": "{ \"files\":[{  \"name\":\"banned-ips.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"banned-players.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"bukkit.yml\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"commands.yml\",  \"directory\":false,  \"blocked\":false }, {  \"name\":\"whitelist.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"world\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_nether\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_the_end\",  \"directory\":true,  \"blocked\":true }]}",
+		"authorization": true
+	},
+	"file/{server-id}/list/{path}-GET": {
+		"description": [
+			"Returns all the files and folders in the provided file path."
+		],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/file/{server-id}/list/{path}",
+		"response": "{ \"files\":[{  \"name\":\"banned-ips.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"banned-players.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"bukkit.yml\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"commands.yml\",  \"directory\":false,  \"blocked\":false }, {  \"name\":\"whitelist.json\",  \"directory\":false,  \"blocked\":false },{  \"name\":\"world\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_nether\",  \"directory\":true,  \"blocked\":true },{  \"name\":\"world_the_end\",  \"directory\":true,  \"blocked\":true }]}",
+		"authorization": true
+	},
+	"file/{server-id}/read/{file-path}-GET": {
+		"description": ["Returns all the contents of a file."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/file/{server-id}/read/{file-path}",
+		"response": "{ \"content\":\"Thecontentsofthefilewillbeinhere\"}",
+		"authorization": true
+	},
+	"file/{server-id}/edit/{file-path}-POST": {
+		"description": [
+			"Edits a file and saves it with the provided content.",
+			"This also creates a file if one does not exist (provide a blank content for a blank file)",
+			"The maximum file upload size is approximately 4 gigabytes."
+		],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/file/{server-id}/edit/{file-path}",
+		"request": "{\"content\":\"Thistextwilloverwritewhateverisinsidethefile\"}",
+		"authorization": true
+	},
+	"file/{server-id}/delete/{file-path}-POST": {
+		"description": ["Deletes a file."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/file/{server-id}/delete/{file-path}",
+		"authorization": true
+	},
+	"file/{server-id}/folder/create-POST": {
+		"description": ["Creates a new folder in the directory."],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/file/{server-id}/folder/create",
+		"request": "{\"name\":\"MyFolder\",\"directory\":\"world\"}",
+		"authorization": true
+	},
+	"admin/stats/users/registrations/week-GET": {
+		"description": ["Weekly user registrations"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/users/registrations/week",
+		"authorization": true
+	},
+	"admin/stats/subscriptions/week-GET": {
+		"description": ["Weekly subscriptions"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/subscriptions/week",
+		"authorization": true
+	},
+	"admin/stats/subscriptions/new/week-GET": {
+		"description": ["Weekly new subscriptions"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/subscriptions/new/week",
+		"authorization": true
+	},
+	"network/stats/joins/week-GET": {
+		"description": ["Weekly joins"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/network/stats/joins/week",
+		"authorization": true
+	},
+	"network/stats/joins/week/java-GET": {
+		"description": ["Weekly java joins"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/network/stats/joins/week/java",
+		"authorization": true
+	},
+	"admin/stats/subscriptions/cancellations/week-GET": {
+		"description": ["Weekly subscription cancellations"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/subscriptions/cancellations/week",
+		"authorization": true
+	},
+	"admin/stats/votes/week-GET": {
+		"description": ["Weekly votes"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/votes/week",
+		"authorization": true
+	},
+	"admin/stats/users/registrations/month-GET": {
+		"description": ["Monthly user registrations"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/users/registrations/month",
+		"authorization": true
+	},
+	"admin/stats/subscriptions/month-GET": {
+		"description": ["Monthly subscriptions"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/subscriptions/month",
+		"authorization": true
+	},
+	"admin/stats/subscriptions/new/month-GET": {
+		"description": ["Monthly new subscriptions"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/subscriptions/new/month",
+		"authorization": true
+	},
+	"network/simple_stats-GET": {
+		"description": ["Returns some stats about the network."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/network/simple_stats",
+		"response": "{\"player_count\":14348,\"server_count\":9042,\"server_max\":13000,\"ram_count\":9476302,\"ram_max\":36000}",
+		"authorization": false
+	},
+	"network/homepage_stats-GET": {
+		"description": ["Returns some stats for the homepage."],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/network/homepage_stats",
+		"response": "{\"server_count\":1543581,\"user_count\":1205537}",
+		"authorization": false
+	},
+	"network/stats/joins/month-GET": {
+		"description": ["Monthly joins"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/network/stats/joins/month",
+		"authorization": true
+	},
+	"network/stats/joins/month/java-GET": {
+		"description": ["Monthly java joins"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/network/stats/joins/month/java",
+		"authorization": true
+	},
+	"admin/stats/subscriptions/cancellations/month-GET": {
+		"description": ["Monthly subscription cancellations"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/subscriptions/cancellations/month",
+		"authorization": true
+	},
+	"admin/stats/votes/month-GET": {
+		"description": ["Monthly votes"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/admin/stats/votes/month",
+		"authorization": true
+	},
+	"network/players/distribution-GET": {
+		"description": ["Player distribution"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/network/players/distribution",
+		"authorization": false
+	},
+	"website/navbar/promotion-GET": {
+		"description": ["Get navbar promotion"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/website/navbar/promotion",
+		"response": "{\"text\":\"Vote every day for 25 free credits! �🏧\",\"link\":\"http://bit.ly/vote4mh\"}",
+		"authorization": true
+	},
+	"website/navbar/promotion-POST": {
+		"description": ["Update navbar promotion"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/website/navbar/promotion",
+		"authorization": true
+	},
+	"user/{name}?byEmail=true-GET": {
+		"description": ["Get user info from email"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/user/{name}?byEmail=true",
+		"authorization": true
+	},
+	"user/{name}?byMinecraftName=true-GET": {
+		"description": ["Get user info from minehut name"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/user/{name}?byMinecraftName=true",
+		"authorization": true
+	},
+	"user/{name}/add_credits/amount-POST": {
+		"description": ["Add credits to user"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/user/{name}/add_credits/amount",
+		"authorization": true
+	},
+	"user/{name}/delete_session-POST": {
+		"description": ["Delete user session"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/user/{name}/delete_session",
+		"authorization": true
+	},
+	"admin/add/{name}-POST": {
+		"description": ["Add new admin"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/add/{name}",
+		"authorization": true
+	},
+	"admin/gdpr/{user}-POST": {
+		"description": ["GDPR dump"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/gdpr/{user}",
+		"authorization": true
+	},
+	"admin/delete/{user}-POST": {
+		"description": ["Delete account"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/delete/{user}",
+		"authorization": true
+	},
+	"server/{name}/destroy_service_admin-POST": {
+		"description": ["Destroy server service"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/server/{name}/destroy_service_admin",
+		"authorization": true
+	},
+	"admin/{name}/suspend-POST": {
+		"description": ["Suspend server"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/{name}/suspend",
+		"authorization": true
+	},
+	"admin/{name}/release-POST": {
+		"description": ["Release a server from suspension"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/{name}/release",
+		"authorization": true
+	},
+	"plugins-GET": {
+		"description": ["Get plugins"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/plugins",
+		"authorization": true
+	},
+	"plugin/id/edit-POST": {
+		"description": ["Edit plugin"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/plugin/id/edit",
+		"authorization": true
+	},
+	"plugin/id/delete-POST": {
+		"description": ["Delete plugin"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/plugin/id/delete",
+		"authorization": true
+	},
+	"plugins-POST": {
+		"description": ["Add plugin"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/plugins",
+		"authorization": true
+	},
+	"admin/payments/range-POST": {
+		"description": ["Payment range"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/payments/range",
+		"authorization": true
+	},
+	"admin/credits/range-POST": {
+		"description": ["Credit ranges"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/credits/range",
+		"authorization": true
+	},
+	"admin/voting/set/reward-POST": {
+		"description": ["Update vote award"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/voting/set/reward",
+		"authorization": true
+	},
+	"vote/reward-GET": {
+		"description": ["Current voting award"],
+		"method": "GET",
+		"endpoint": "https://api.minehut.com/vote/reward",
+		"authorization": true
+	},
+	"admin/votes/range-POST": {
+		"description": ["Voting range"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/admin/votes/range",
+		"authorization": true
+	},
+	"network/motd-POST": {
+		"description": ["Update Bungeecord MOTD"],
+		"method": "POST",
+		"endpoint": "https://api.minehut.com/network/motd",
+		"authorization": true
+	}
 }
