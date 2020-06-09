@@ -39,7 +39,7 @@ class Banner extends React.Component {
         const buttons = this.props.buttons === "true" ? <div className="buttons">
             <button className="minehut"><img src="images/minehut.png"></img><h3>Minehut</h3></button>
             <button className="discord"><img src="images/discord.png"></img><h3>Discord</h3></button>
-            <Popup class="discord" title="Discord" subtitle="Contact me on Discord @Kiko#6282" color="linear-gradient(-45deg, #5768a7, #738ADB)"/>
+            <Popup class="discord" title="Discord" subtitle="Contact me on Discord @Kiko#1234" color="linear-gradient(-45deg, #5768a7, #738ADB)"/>
         </div> : <div></div>
         const className = this.props.class ? this.props.class + " title" : "title"
         return (
