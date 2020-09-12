@@ -29,7 +29,7 @@
     "heroku": "^7.39.0",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@types/jquery": "^3.3.33",
