@@ -28,7 +28,7 @@
     "force-secure-express": "^1.0.1",
     "heroku": "^7.39.0",
     "kind-of": "^6.0.3",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
